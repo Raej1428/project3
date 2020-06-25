@@ -16,7 +16,6 @@ import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
-
 import profile from "assets/img/faces/christian.jpg";
 
 import studio1 from "assets/img/examples/studio-1.jpg";
