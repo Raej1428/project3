@@ -19,8 +19,8 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
-import WorkSection from "./Sections/WorkoutSection.js";
-import BlogSection from "./Sections/BlogSection.js";
+import WorkoutSection from "./Sections/WorkoutSection.js";
+import LoginPage from "../LoginPage/LoginPage";
 
 const dashboardRoutes = [];
 
@@ -54,16 +54,14 @@ export default function LandingPage(props) {
                 Come explore the healthier side of living with DU Fitness. Do you, be healthy, start your journey here. 
               </h4>
               <br />
-              {/* <Button
+              <Button
                 color="danger"
                 size="lg"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
+                href={LoginPage}
                 target="_blank"
-                rel="noopener noreferrer"
               >
-                <i className="fas fa-play" />
-                Watch video
-              </Button> */}
+                Login
+              </Button>
             </GridItem>
           </GridContainer>
         </div>
@@ -71,7 +69,7 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
-          <WorkSection />
+          <WorkoutSection />
         </div>
       </div>
       <Footer />

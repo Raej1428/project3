@@ -10,7 +10,7 @@ import "assets/scss/material-kit-react.scss?v=1.9.0";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";
-import RecipePage from "views/Recipeage/RecipePage.js";
+import RecipePage from "views/RecipePage/RecipePage.js";
 import WorkoutPage from "views/WorkoutPage/WorkoutPage.js";
 import BlogPage from "views/BlogPage/BlogPage.js";
 

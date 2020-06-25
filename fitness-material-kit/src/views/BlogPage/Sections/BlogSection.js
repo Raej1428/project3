@@ -11,11 +11,13 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
+import buttonStyle from "assets/jss/material-kit-react/components/buttonStyle";
 
 const useStyles = makeStyles(styles);
 
 function BlogDisplay() {
-  
+  // onclick(Button).
+
 }
 
 export default function BlogSection() {
