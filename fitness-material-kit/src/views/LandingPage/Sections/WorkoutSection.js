@@ -22,7 +22,11 @@ import team3 from "assets/img/faces/kendall.jpg";
 
 const useStyles = makeStyles(styles);
 
-export default function TeamSection() {
+function WorkoutDisplay(){
+
+}
+
+export default function WorkoutSection() {
   const classes = useStyles();
   const imageClasses = classNames(
     classes.imgRaised,
@@ -31,7 +35,7 @@ export default function TeamSection() {
   );
   return (
     <div className={classes.section}>
-      <h2 className={classes.title}>Here is our team</h2>
+      <h2 className={classes.title}>Workouts</h2>
       <div>
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
@@ -40,16 +44,14 @@ export default function TeamSection() {
                 <img src={team1} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                Gigi Hadid
+                How'd You Get Those Glutes Boo?
                 <br />
-                <small className={classes.smallTitle}>Model</small>
+                <small className={classes.smallTitle}>Lower Body Workout</small>
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#pablo">links</a> for people to be able to
-                  follow them outside the site.
+                  This is a workout targeted at shaping the lower body for maximum results.
+                  <a href="#pablo">(Placeholder Full Workout)</a>
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
@@ -83,16 +85,14 @@ export default function TeamSection() {
                 <img src={team2} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                Christian Louboutin
+                So Ripped You Can't Put Your Arms Down!
                 <br />
-                <small className={classes.smallTitle}>Designer</small>
+                <small className={classes.smallTitle}>Upper Body</small>
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#pablo">links</a> for people to be able to
-                  follow them outside the site.
+                This is a workout targeted at shaping the upper body for maximum results.
+                  <a href="#pablo">(Placeholder Full Workout)</a>
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
@@ -119,16 +119,14 @@ export default function TeamSection() {
                 <img src={team3} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                Kendall Jenner
+                Ripped Abs... Eat Your Heart Out Liam!
                 <br />
-                <small className={classes.smallTitle}>Model</small>
+                <small className={classes.smallTitle}>Abdomen</small>
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  You can write here details about one of your team members. You
-                  can give more details about what they do. Feel free to add
-                  some <a href="#pablo">links</a> for people to be able to
-                  follow them outside the site.
+                This is a workout targeted at shaping the abdomen for maximum results.
+                  <a href="#pablo">(Placeholder Full Workout)</a>
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>

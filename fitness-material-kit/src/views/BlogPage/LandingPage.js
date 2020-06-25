@@ -19,7 +19,7 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
-import WorkSection from "./Sections/WorkoutSection.js";
+import WorkSection from "./Sections/WorkSection.js";
 import BlogSection from "./Sections/BlogSection.js";
 
 const dashboardRoutes = [];
@@ -71,6 +71,7 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
+          <BlogSection />
           <WorkSection />
         </div>
       </div>

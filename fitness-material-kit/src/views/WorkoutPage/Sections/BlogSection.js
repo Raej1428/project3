@@ -5,22 +5,22 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import Button from "components/CustomButtons/Button.js";
+import GridContainer from "views/BlogPage/Sections/node_modules/components/Grid/GridContainer.js.js";
+import GridItem from "views/BlogPage/Sections/node_modules/components/Grid/GridItem.js.js";
+import CustomInput from "views/BlogPage/Sections/node_modules/components/CustomInput/CustomInput.js.js";
+import Button from "views/BlogPage/Sections/node_modules/components/CustomButtons/Button.js.js";
 
-import styles from "assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
+import styles from "views/BlogPage/Sections/node_modules/assets/jss/material-kit-react/views/landingPageSections/workStyle.js.js";
 
 const useStyles = makeStyles(styles);
 
-export default function WorkSection() {
+export default function BlogSection() {
   const classes = useStyles();
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Work with us</h2>
+          <h2 className={classes.title}>Blog</h2>
           <h4 className={classes.description}>
             Divide details about your product or agency work into parts. Write a
             few lines about each one and contact us about any further
@@ -31,7 +31,7 @@ export default function WorkSection() {
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput
-                  labelText="Your Name"
+                  labelText="Title:"
                   id="name"
                   formControlProps={{
                     fullWidth: true
@@ -40,15 +40,15 @@ export default function WorkSection() {
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput
-                  labelText="Your Email"
-                  id="email"
+                  labelText="Category:"
+                  id="category"
                   formControlProps={{
                     fullWidth: true
                   }}
                 />
               </GridItem>
               <CustomInput
-                labelText="Your Message"
+                labelText="The Details:"
                 id="message"
                 formControlProps={{
                   fullWidth: true,
@@ -60,7 +60,7 @@ export default function WorkSection() {
                 }}
               />
               <GridItem xs={12} sm={12} md={4}>
-                <Button color="primary">Send Message</Button>
+                <Button color="primary">Post</Button>
               </GridItem>
             </GridContainer>
           </form>
