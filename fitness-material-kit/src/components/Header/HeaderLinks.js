@@ -16,7 +16,7 @@ import { Apps, CloudDownload } from "@material-ui/icons";
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
-import Button from "components/CustomButtons/Button.js";
+import Button from "views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/CustomButtons/Button.js.js.js";
 
 import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
 
@@ -39,12 +39,18 @@ export default function HeaderLinks(props) {
             <Link to="/" className={classes.dropdownLink}>
               Home
             </Link>,
-            <Link to="/LoginPage" className={classes.dropdownLink}>
+            <Link to="/login-page" className={classes.dropdownLink}>
               Login
             </Link>,
-            <Link to="/ProfilePage" className={classes.dropdownLink}>
-              Profile
+            <Link to="/recipe-page" className={classes.dropdownLink}>
+              Recipes
             </Link>,
+            <Link to="/workout-page" className={classes.dropdownLink}>
+            Workouts
+          </Link>,
+          <Link to="/blog-page" className={classes.dropdownLink}>
+          Blog
+        </Link>,
             <a
               href="https://creativetimofficial.github.io/material-kit-react/#/documentation?ref=mkr-navbar"
               target="_blank"
@@ -54,72 +60,6 @@ export default function HeaderLinks(props) {
             </a>
           ]}
         />
-      </ListItem>
-      {/* <ListItem className={classes.listItem}>
-        <Button
-          href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-          <CloudDownload className={classes.icons} /> Download
-        </Button>
-      </ListItem> */}
-      <ListItem className={classes.listItem}>
-        {/*<Tooltip title="Delete">
-          <IconButton aria-label="Delete">
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>*/}
-        <Tooltip
-          id="instagram-twitter"
-          title="Follow us on twitter"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            href="https://twitter.com/CreativeTim?ref=creativetim"
-            target="_blank"
-            color="transparent"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-twitter"} />
-          </Button>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-facebook"
-          title="Follow us on facebook"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://www.facebook.com/CreativeTim?ref=creativetim"
-            target="_blank"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-facebook"} />
-          </Button>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-tooltip"
-          title="Follow us on instagram"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-            target="_blank"
-            className={classes.navLink}
-          >
-            <i className={classes.socialIcons + " fab fa-instagram"} />
-          </Button>
-        </Tooltip>
       </ListItem>
     </List>
   );

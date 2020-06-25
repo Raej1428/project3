@@ -5,7 +5,7 @@ import {
   successColor,
   warningColor,
   dangerColor
-} from "assets/jss/material-kit-react.js";
+} from "views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/assets/jss/material-kit-react.js.js.js";
 
 const paginationStyle = {
   pagination: {

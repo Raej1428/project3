@@ -7,20 +7,18 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import Header from "components/Header/Header.js";
-import Footer from "components/Footer/Footer.js";
+import Header from "../../components/Header/Header.js";
+import Footer from "../../components/Footer/Footer.js";
 import GridContainer from "views/BlogPage/Sections/node_modules/components/Grid/GridContainer.js.js";
 import GridItem from "views/BlogPage/Sections/node_modules/components/Grid/GridItem.js.js";
 import Button from "views/BlogPage/Sections/node_modules/components/CustomButtons/Button.js.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import Parallax from "components/Parallax/Parallax.js";
+import HeaderLinks from "../../components/Header/HeaderLinks.js";
+import Parallax from "../../components/Parallax/Parallax.js";
 
-import styles from "assets/jss/material-kit-react/views/landingPage.js";
+import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
-import ProductSection from "./Sections/ProductSection.js";
-import WorkSection from "./Sections/WorkSection.js";
-import BlogSection from "./Sections/BlogSection.js";
+import WorkoutSection from "Sections/blog/WorkoutSection.js";
 
 const dashboardRoutes = [];
 
@@ -47,32 +45,18 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>Your Fitness Journey Starts Here.</h1>
+              <h1 className={classes.title}>Baby we can work-it-out.</h1>
               <h4>
-                Every step you take towards a new healthier you will be reinforced here. 
-                We offer intense workout programs, healthy recipes, and peer collaboration to help you get where you want to be on your health journey.
-                Come explore the healthier side of living with DU Fitness. Do you, be healthy, start your journey here. 
+               Find all of the latest workouts here, updated at your convenience. 
               </h4>
               <br />
-              {/* <Button
-                color="danger"
-                size="lg"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fas fa-play" />
-                Watch video
-              </Button> */}
             </GridItem>
           </GridContainer>
         </div>
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <ProductSection />
-          <BlogSection />
-          <WorkSection />
+          <WorkoutSection />
         </div>
       </div>
       <Footer />

@@ -5,20 +5,20 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Small from "components/Typography/Small.js";
-import Danger from "components/Typography/Danger.js";
-import Warning from "components/Typography/Warning.js";
-import Success from "components/Typography/Success.js";
-import Info from "components/Typography/Info.js";
-import Primary from "components/Typography/Primary.js";
-import Muted from "components/Typography/Muted.js";
-import Quote from "components/Typography/Quote.js";
+import GridContainer from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridContainer.js.js.js.js";
+import GridItem from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridItem.js.js.js.js";
+import Small from "./node_modules/components/Typography/Small.js.js";
+import Danger from "./node_modules/components/Typography/Danger.js.js";
+import Warning from "./node_modules/components/Typography/Warning.js.js";
+import Success from "./node_modules/components/Typography/Success.js.js";
+import Info from "./node_modules/components/Typography/Info.js.js";
+import Primary from "./node_modules/components/Typography/Primary.js.js";
+import Muted from "./node_modules/components/Typography/Muted.js.js";
+import Quote from "./node_modules/components/Typography/Quote.js.js";
 
-import image from "assets/img/faces/avatar.jpg";
+import image from "./node_modules/assets/img/faces/avatar.jpg";
 
-import styles from "assets/jss/material-kit-react/views/componentsSections/typographyStyle.js";
+import styles from "./node_modules/assets/jss/material-kit-react/views/componentsSections/typographyStyle.js.js";
 
 const useStyles = makeStyles(styles);
 

@@ -1,4 +1,4 @@
-import { defaultFont } from "assets/jss/material-kit-react.js";
+import { defaultFont } from "views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/assets/jss/material-kit-react.js.js.js";
 
 import tooltip from "assets/jss/material-kit-react/tooltipsStyle.js";
 

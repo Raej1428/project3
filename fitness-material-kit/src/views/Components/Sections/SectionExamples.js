@@ -6,14 +6,14 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
+import GridContainer from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridContainer.js.js.js.js";
+import GridItem from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridItem.js.js.js.js";
+import Button from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/CustomButtons/Button.js.js.js.js";
 
-import landing from "assets/img/landing.jpg";
-import profile from "assets/img/profile.jpg";
+import landing from "./node_modules/assets/img/landing.jpg";
+import profile from "./node_modules/assets/img/profile.jpg";
 
-import styles from "assets/jss/material-kit-react/views/componentsSections/exampleStyle.js";
+import styles from "./node_modules/assets/jss/material-kit-react/views/componentsSections/exampleStyle.js.js";
 
 const useStyles = makeStyles(styles);
 

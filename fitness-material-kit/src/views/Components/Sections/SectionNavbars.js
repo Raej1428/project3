@@ -11,17 +11,17 @@ import Face from "@material-ui/icons/Face";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import Explore from "@material-ui/icons/Explore";
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Header from "components/Header/Header.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
-import Button from "components/CustomButtons/Button.js";
+import GridContainer from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridContainer.js.js.js.js";
+import GridItem from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridItem.js.js.js.js";
+import Header from "./node_modules/components/Header/Header.js.js";
+import CustomInput from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/CustomInput/CustomInput.js.js.js.js";
+import CustomDropdown from "./node_modules/components/CustomDropdown/CustomDropdown.js.js";
+import Button from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/CustomButtons/Button.js.js.js.js";
 
-import image from "assets/img/bg.jpg";
-import profileImage from "assets/img/faces/avatar.jpg";
+import image from "./node_modules/assets/img/bg.jpg";
+import profileImage from "./node_modules/assets/img/faces/avatar.jpg";
 
-import styles from "assets/jss/material-kit-react/views/componentsSections/navbarsStyle.js";
+import styles from "./node_modules/assets/jss/material-kit-react/views/componentsSections/navbarsStyle.js.js";
 
 const useStyles = makeStyles(styles);
 

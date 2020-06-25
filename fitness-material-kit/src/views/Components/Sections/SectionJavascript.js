@@ -17,11 +17,11 @@ import Popover from "@material-ui/core/Popover";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import Close from "@material-ui/icons/Close";
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
+import GridContainer from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridContainer.js.js.js.js";
+import GridItem from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridItem.js.js.js.js";
+import Button from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/CustomButtons/Button.js.js.js.js";
 
-import styles from "assets/jss/material-kit-react/views/componentsSections/javascriptStyles.js";
+import styles from "./node_modules/assets/jss/material-kit-react/views/componentsSections/javascriptStyles.js.js";
 
 const useStyles = makeStyles(styles);
 

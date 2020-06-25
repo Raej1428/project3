@@ -10,9 +10,9 @@ import Favorite from "@material-ui/icons/Favorite";
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
-import Button from "components/CustomButtons/Button.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+import Button from "views/RecipePage/Sections/node_modules/components/CustomButtons/Button.js.js";
+import GridContainer from "views/RecipePage/Sections/node_modules/components/Grid/GridContainer.js.js";
+import GridItem from "views/RecipePage/Sections/node_modules/components/Grid/GridItem.js.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
