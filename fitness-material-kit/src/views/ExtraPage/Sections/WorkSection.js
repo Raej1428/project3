@@ -7,24 +7,20 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import GridContainer from "./node_modules/components/Grid/GridContainer.js.js.js";
-import GridItem from "./node_modules/components/Grid/GridItem.js.js.js";
-import Button from "./node_modules/components/CustomButtons/Button.js.js.js";
-import Card from "./node_modules/components/Card/Card.js.js.js";
-import CardBody from "./node_modules/components/Card/CardBody.js.js.js";
-import CardFooter from "./node_modules/components/Card/CardFooter.js.js.js";
+import GridContainer from "./node_modules/components/Grid/GridContainer.js.js";
+import GridItem from "./node_modules/components/Grid/GridItem.js.js";
+import Button from "./node_modules/components/CustomButtons/Button.js.js";
+import Card from "./node_modules/components/Card/Card.js.js";
+import CardBody from "./node_modules/components/Card/CardBody.js.js";
+import CardFooter from "./node_modules/components/Card/CardFooter.js.js";
 
-import styles from "./node_modules/assets/jss/material-kit-react/views/landingPageSections/teamStyle.js.js.js";
+import styles from "./node_modules/assets/jss/material-kit-react/views/landingPageSections/teamStyle.js.js";
 
 import team1 from "./node_modules/assets/img/faces/avatar.jpg";
 import team2 from "./node_modules/assets/img/faces/christian.jpg";
 import team3 from "./node_modules/assets/img/faces/kendall.jpg";
 
 const useStyles = makeStyles(styles);
-
-function BlogDisplay(){
-
-}
 
 export default function WorkSection() {
   const classes = useStyles();

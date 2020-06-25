@@ -3,32 +3,50 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 // @material-ui/icons
 
 // core components
-import Header from "components/Header/Header.js";
-import Footer from "components/Footer/Footer.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import Parallax from "components/Parallax/Parallax.js";
+import Header from "../../components/Header/Header.js";
+import Footer from "../../components/Footer/Footer.js";
+import GridContainer from "../../components/Grid/GridContainer.js";
+import GridItem from "../../components/Grid/GridItem.js";
+import Button from "../../components/CustomButtons/Button.js";
+import HeaderLinks from "../../components/Header/HeaderLinks.js";
+import Parallax from "../../components/Parallax/Parallax.js";
 
-import styles from "assets/jss/material-kit-react/views/landingPage.js";
+import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
-import ProductSection from "./Sections/ProductSection.js";
-import WorkSection from "./Sections/WorkSection.js";
+import PostList from "./Sections/blog/PostList.js";
 import BlogSection from "./Sections/BlogSection.js";
 
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
-export default function LandingPage(props) {
+export default function BlogPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
+
+  const initialState = {
+    contacts: []
+  };
+  
+  function reducer(state = initialState, action) {
+    switch (action.type) {
+      case 'ADD_POST':
+        return {...state,
+          posts: [...state.posts, action.data]
+        }
+      default:
+        return state;
+    }
+  }
+
+  const store = createStore(reducer);
+
   return (
     <div>
       <Header
@@ -49,12 +67,12 @@ export default function LandingPage(props) {
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>Your Fitness Journey Starts Here.</h1>
               <h4>
-                Every step you take towards a new healthier you will be reinforced here. 
+                Every step you take towards a new healthier you will be reinforced here.
                 We offer intense workout programs, healthy recipes, and peer collaboration to help you get where you want to be on your health journey.
-                Come explore the healthier side of living with DU Fitness. Do you, be healthy, start your journey here. 
+                Come explore the healthier side of living with DU Fitness. Do you, be healthy, start your journey here.
               </h4>
               <br />
-              {/* <Button
+              <Button
                 color="danger"
                 size="lg"
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
@@ -62,17 +80,18 @@ export default function LandingPage(props) {
                 rel="noopener noreferrer"
               >
                 <i className="fas fa-play" />
-                Watch video
-              </Button> */}
+                Never Give Up!
+              </Button>
             </GridItem>
           </GridContainer>
         </div>
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <ProductSection />
-          <BlogSection />
-          <WorkSection />
+          <Provider store={store}>
+            <BlogSection />
+            <PostList />
+          </Provider>
         </div>
       </div>
       <Footer />

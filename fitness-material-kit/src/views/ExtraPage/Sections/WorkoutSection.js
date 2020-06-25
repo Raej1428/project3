@@ -7,24 +7,20 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import GridContainer from "./node_modules/components/Grid/GridContainer.js.js.js";
-import GridItem from "./node_modules/components/Grid/GridItem.js.js.js";
-import Button from "./node_modules/components/CustomButtons/Button.js.js.js";
-import Card from "./node_modules/components/Card/Card.js.js.js";
-import CardBody from "./node_modules/components/Card/CardBody.js.js.js";
-import CardFooter from "./node_modules/components/Card/CardFooter.js.js.js";
+import GridContainer from "./node_modules/components/Grid/GridContainer.js.js";
+import GridItem from "./node_modules/components/Grid/GridItem.js.js";
+import Button from "./node_modules/components/CustomButtons/Button.js.js";
+import Card from "./node_modules/components/Card/Card.js.js";
+import CardBody from "./node_modules/components/Card/CardBody.js.js";
+import CardFooter from "./node_modules/components/Card/CardFooter.js.js";
 
-import styles from "./node_modules/assets/jss/material-kit-react/views/landingPageSections/teamStyle.js.js.js";
+import styles from "./node_modules/assets/jss/material-kit-react/views/landingPageSections/teamStyle.js.js";
 
 import team1 from "./node_modules/assets/img/faces/avatar.jpg";
 import team2 from "./node_modules/assets/img/faces/christian.jpg";
 import team3 from "./node_modules/assets/img/faces/kendall.jpg";
 
 const useStyles = makeStyles(styles);
-
-function WorkoutDisplay(){
-
-}
 
 export default function WorkoutSection() {
   const classes = useStyles();
@@ -44,13 +40,14 @@ export default function WorkoutSection() {
                 <img src={team1} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                How'd You Get Those Glutes Boo?
+                How{"'"}d You Get Those Glutes Boo?
                 <br />
                 <small className={classes.smallTitle}>Lower Body Workout</small>
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  This is a workout targeted at shaping the lower body for maximum results.
+                  This is a workout targeted at shaping the lower body for
+                  maximum results.
                   <a href="#pablo">(Placeholder Full Workout)</a>
                 </p>
               </CardBody>
@@ -85,13 +82,14 @@ export default function WorkoutSection() {
                 <img src={team2} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                So Ripped You Can't Put Your Arms Down!
+                So Ripped You Can{"'"}t Put Your Arms Down!
                 <br />
                 <small className={classes.smallTitle}>Upper Body</small>
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                This is a workout targeted at shaping the upper body for maximum results.
+                  This is a workout targeted at shaping the upper body for
+                  maximum results.
                   <a href="#pablo">(Placeholder Full Workout)</a>
                 </p>
               </CardBody>
@@ -125,7 +123,8 @@ export default function WorkoutSection() {
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                This is a workout targeted at shaping the abdomen for maximum results.
+                  This is a workout targeted at shaping the abdomen for maximum
+                  results.
                   <a href="#pablo">(Placeholder Full Workout)</a>
                 </p>
               </CardBody>

@@ -5,12 +5,12 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import GridContainer from "views/BlogPage/Sections/node_modules/components/Grid/GridContainer.js.js";
-import GridItem from "views/BlogPage/Sections/node_modules/components/Grid/GridItem.js.js";
-import CustomInput from "views/BlogPage/Sections/node_modules/components/CustomInput/CustomInput.js.js";
-import Button from "views/BlogPage/Sections/node_modules/components/CustomButtons/Button.js.js";
+import GridContainer from "./node_modules/components/Grid/GridContainer.js.js";
+import GridItem from "./node_modules/components/Grid/GridItem.js.js";
+import CustomInput from "./node_modules/components/CustomInput/CustomInput.js.js";
+import Button from "./node_modules/components/CustomButtons/Button.js.js";
 
-import styles from "views/BlogPage/Sections/node_modules/assets/jss/material-kit-react/views/landingPageSections/workStyle.js.js";
+import styles from "./node_modules/assets/jss/material-kit-react/views/landingPageSections/workStyle.js.js";
 
 const useStyles = makeStyles(styles);
 
@@ -34,7 +34,7 @@ export default function BlogSection() {
                   labelText="Title:"
                   id="name"
                   formControlProps={{
-                    fullWidth: true
+                    fullWidth: true,
                   }}
                 />
               </GridItem>
@@ -43,7 +43,7 @@ export default function BlogSection() {
                   labelText="Category:"
                   id="category"
                   formControlProps={{
-                    fullWidth: true
+                    fullWidth: true,
                   }}
                 />
               </GridItem>
@@ -52,11 +52,11 @@ export default function BlogSection() {
                 id="message"
                 formControlProps={{
                   fullWidth: true,
-                  className: classes.textArea
+                  className: classes.textArea,
                 }}
                 inputProps={{
                   multiline: true,
-                  rows: 5
+                  rows: 5,
                 }}
               />
               <GridItem xs={12} sm={12} md={4}>

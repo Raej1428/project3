@@ -7,20 +7,19 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import Header from "./node_modules/components/Header/Header.js.js.js";
-import Footer from "./node_modules/components/Footer/Footer.js.js.js";
-import GridContainer from "./node_modules/components/Grid/GridContainer.js.js.js";
-import GridItem from "./node_modules/components/Grid/GridItem.js.js.js";
-import Button from "./node_modules/components/CustomButtons/Button.js.js.js";
-import HeaderLinks from "./node_modules/components/Header/HeaderLinks.js.js.js";
-import Parallax from "./node_modules/components/Parallax/Parallax.js.js.js";
+import Header from "./node_modules/components/Header/Header.js.js";
+import Footer from "./node_modules/components/Footer/Footer.js.js";
+import GridContainer from "./node_modules/components/Grid/GridContainer.js.js";
+import GridItem from "./node_modules/components/Grid/GridItem.js.js";
+// import Button from "./node_modules/components/CustomButtons/Button.js.js";
+import HeaderLinks from "./node_modules/components/Header/HeaderLinks.js.js";
+import Parallax from "./node_modules/components/Parallax/Parallax.js.js";
 
-import styles from "./node_modules/assets/jss/material-kit-react/views/landingPage.js.js.js";
+import styles from "./node_modules/assets/jss/material-kit-react/views/landingPage.js.js";
 
 // Sections for this page
-import ProductSection from "./Sections/ProductSection.js.js.js";
-import WorkSection from "./Sections/WorkoutSection.js.js.js";
-import BlogSection from "./Sections/BlogSection.js.js.js";
+import ProductSection from "./Sections/ProductSection.js.js";
+import WorkSection from "./Sections/WorkoutSection.js.js";
 
 const dashboardRoutes = [];
 
@@ -39,19 +38,27 @@ export default function LandingPage(props) {
         fixed
         changeColorOnScroll={{
           height: 400,
-          color: "white"
+          color: "white",
         }}
         {...rest}
       />
-      <Parallax filter image={require("./node_modules/assets/img/landing-bg.jpg")}>
+      <Parallax
+        filter
+        image={require("./node_modules/assets/img/landing-bg.jpg")}
+      >
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>Your Fitness Journey Starts Here.</h1>
+              <h1 className={classes.title}>
+                Your Fitness Journey Starts Here.
+              </h1>
               <h4>
-                Every step you take towards a new healthier you will be reinforced here. 
-                We offer intense workout programs, healthy recipes, and peer collaboration to help you get where you want to be on your health journey.
-                Come explore the healthier side of living with DU Fitness. Do you, be healthy, start your journey here. 
+                Every step you take towards a new healthier you will be
+                reinforced here. We offer intense workout programs, healthy
+                recipes, and peer collaboration to help you get where you want
+                to be on your health journey. Come explore the healthier side of
+                living with DU Fitness. Do you, be healthy, start your journey
+                here.
               </h4>
               <br />
               {/* <Button
