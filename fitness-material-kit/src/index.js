@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
 
+
 import "assets/scss/material-kit-react.scss?v=1.9.0";
 
 // pages for this product
@@ -12,6 +13,7 @@ import LoginPage from "./views/LoginPage/LoginPage.js";
 import RecipePage from "./views/RecipePage/RecipePage.js";
 import WorkoutPage from "./views/WorkoutPage/WorkoutPage.js";
 import BlogPage from "./views/BlogPage/BlogPage.js";
+
 
 var hist = createBrowserHistory();
 

@@ -14,7 +14,7 @@ import CustomInput from "../../../components/CustomInput/CustomInput.js";
 import Button from "../../../components/CustomButtons/Button.js";
 
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
-import { title } from "../../../assets/jss/material-kit-react.js";
+// import { title } from "../../../assets/jss/material-kit-react.js";
 // import buttonStyle from "assets/jss/material-kit-react/components/buttonStyle";
 
 const useStyles = makeStyles(styles);
@@ -37,6 +37,7 @@ function BlogSection(props) {
   
   return (
     <div className={classes.section}>
+      
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
           <h2 className={classes.title}>Blog</h2>

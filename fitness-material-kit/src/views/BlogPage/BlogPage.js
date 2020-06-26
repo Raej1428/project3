@@ -1,8 +1,11 @@
 import React from "react";
+import { createStore } from 'redux'
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
 // @material-ui/icons
 
@@ -11,7 +14,7 @@ import Header from "../../components/Header/Header.js";
 import Footer from "../../components/Footer/Footer.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
-import Button from "../../components/CustomButtons/Button.js";
+// import Button from "../../components/CustomButtons/Button.js";
 import HeaderLinks from "../../components/Header/HeaderLinks.js";
 import Parallax from "../../components/Parallax/Parallax.js";
 
@@ -29,6 +32,7 @@ export default function LandingPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
   return (
+    <Provider store={store}>
     <div>
       <Header
         color="transparent"
@@ -48,8 +52,8 @@ export default function LandingPage(props) {
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>Blog Page.</h1>
               <h4>
-                Whatever you want to get it, let us know about here. 
-                Recipes, workouts, journey news, tips and tricks, and health hacks, BLOG IT ALL HERE! 
+                Whatever you want to get it, let us know about here.
+                Recipes, workouts, journey news, tips and tricks, and health hacks, BLOG IT ALL HERE!
               </h4>
               <br />
             </GridItem>
@@ -58,11 +62,14 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <BlogSection />
-        <PostList />
+        
+            <BlogSection />
+            <PostList />
+ 
         </div>
       </div>
       <Footer />
     </div>
+    </Provider>
   );
 }
