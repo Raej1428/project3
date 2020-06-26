@@ -7,7 +7,7 @@ import {
   roseColor,
   grayColor,
   title
-} from "views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/assets/jss/material-kit-react.js.js.js";
+} from "../../material-kit-react";
 
 const infoStyle = {
   infoArea: {

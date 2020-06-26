@@ -7,21 +7,21 @@ import Icon from "@material-ui/core/Icon";
 import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
 // core components
-import Header from "./node_modules/components/Header/Header.js.js";
-import HeaderLinks from "./node_modules/components/Header/HeaderLinks.js.js";
-import Footer from "./node_modules/components/Footer/Footer.js.js";
-import GridContainer from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridContainer.js.js.js.js";
-import GridItem from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridItem.js.js.js.js";
-import Button from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/CustomButtons/Button.js.js.js.js";
-import Card from "./node_modules/components/Card/Card.js.js";
-import CardBody from "./node_modules/components/Card/CardBody.js.js";
-import CardHeader from "./node_modules/components/Card/CardHeader.js.js";
-import CardFooter from "./node_modules/components/Card/CardFooter.js.js";
-import CustomInput from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/CustomInput/CustomInput.js.js.js.js";
+import Header from "../../components/Header/Header.js";
+import HeaderLinks from "../../components/Header/HeaderLinks.js";
+import Footer from "../../components/Footer/Footer.js";
+import GridContainer from "../../components/Grid/GridContainer.js";
+import GridItem from "../../components/Grid/GridItem.js";
+import Button from "../../components/CustomButtons/Button.js";
+import Card from "../../components/Card/Card.js";
+import CardBody from "../../components/Card/CardBody.js";
+import CardHeader from "../../components/Card/CardHeader.js";
+import CardFooter from "../../components/Card/CardFooter.js";
+import CustomInput from "../../components/CustomInput/CustomInput.js";
 
-import styles from "./node_modules/assets/jss/material-kit-react/views/loginPage.js.js";
+import styles from "../../assets/jss/material-kit-react/views/loginPage.js";
 
-import image from "./node_modules/assets/img/bg7.jpg";
+import image from "../../assets/img/bg7.jpg";
 
 const useStyles = makeStyles(styles);
 

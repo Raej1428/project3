@@ -1,4 +1,4 @@
-import { cardTitle, title } from "views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/assets/jss/material-kit-react.js.js.js";
+import { cardTitle, title } from "../../../material-kit-react";
 import imagesStyle from "assets/jss/material-kit-react/imagesStyles.js";
 
 const teamStyle = {

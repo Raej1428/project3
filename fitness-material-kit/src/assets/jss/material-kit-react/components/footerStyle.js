@@ -1,4 +1,4 @@
-import { container, primaryColor } from "views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/assets/jss/material-kit-react.js.js.js";
+import { container, primaryColor } from "../../material-kit-react";
 
 const footerStyle = {
   block: {

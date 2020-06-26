@@ -1,4 +1,4 @@
-import { title } from "views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/assets/jss/material-kit-react.js.js.js";
+import { title } from "../../../material-kit-react";
 
 const productStyle = {
   section: {

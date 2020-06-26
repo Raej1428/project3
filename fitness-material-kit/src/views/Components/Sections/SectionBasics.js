@@ -14,15 +14,15 @@ import People from "@material-ui/icons/People";
 import Check from "@material-ui/icons/Check";
 import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
 // core components
-import GridContainer from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridContainer.js.js.js.js";
-import GridItem from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridItem.js.js.js.js";
-import Button from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/CustomButtons/Button.js.js.js.js";
-import CustomInput from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/CustomInput/CustomInput.js.js.js.js";
-import CustomLinearProgress from "./node_modules/components/CustomLinearProgress/CustomLinearProgress.js.js";
-import Paginations from "./node_modules/components/Pagination/Pagination.js.js";
-import Badge from "./node_modules/components/Badge/Badge.js.js";
+import GridContainer from "../../../components/Grid/GridContainer.js";
+import GridItem from "../../../components/Grid/GridItem.js";
+import Button from "../../../components/CustomButtons/Button.js";
+import CustomInput from "../../../components/CustomInput/CustomInput.js";
+import CustomLinearProgress from "../../../components/CustomLinearProgress/CustomLinearProgress.js";
+import Paginations from "../../../components/Pagination/Pagination.js";
+import Badge from "../../../components/Badge/Badge.js";
 
-import styles from "./node_modules/assets/jss/material-kit-react/views/componentsSections/basicsStyle.js.js";
+import styles from "../../../components/Sections/basicsStyle.js";
 
 const useStyles = makeStyles(styles);
 

@@ -6,15 +6,15 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 import LocationOn from "@material-ui/icons/LocationOn";
 // core components
-import GridContainer from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridContainer.js.js.js.js";
-import GridItem from "./node_modules/views/WorkoutPage/Sections/node_modules/views/RecipePage/Sections/node_modules/components/Grid/GridItem.js.js.js.js";
-import Card from "./node_modules/components/Card/Card.js.js";
+import GridContainer from "../../../components/Grid/GridContainer.js";
+import GridItem from "../../../components/Grid/GridItem.js";
+import Card from "../../../omponents/Card/Card.js";
 
-import image1 from "./node_modules/assets/img/bg.jpg";
-import image2 from "./node_modules/assets/img/bg2.jpg";
-import image3 from "./node_modules/assets/img/bg3.jpg";
+import image1 from "../../../assets/img/bg.jpg";
+import image2 from "../../../assets/img/bg2.jpg";
+import image3 from "../../../assets/img/bg3.jpg";
 
-import styles from "./node_modules/assets/jss/material-kit-react/views/componentsSections/carouselStyle.js.js";
+import styles from "../../../assets/jss/material-kit-react/views/componentsSections/carouselStyle.js";
 
 const useStyles = makeStyles(styles);
 

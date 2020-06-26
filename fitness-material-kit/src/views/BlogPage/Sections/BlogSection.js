@@ -1,5 +1,5 @@
 import React from "react";
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { connect } from 'react-redux'
 import { addPost } from './blog/actions.js'
 // @material-ui/core components
@@ -9,7 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // core components
 import GridContainer from "../../../components/Grid/GridContainer.js";
-import GridItem from "../../../components/Grid/GridItem.js.js";
+import GridItem from "../../../components/Grid/GridItem.js";
 import CustomInput from "../../../components/CustomInput/CustomInput.js";
 import Button from "../../../components/CustomButtons/Button.js";
 
@@ -18,22 +18,22 @@ import { title } from "../../../assets/jss/material-kit-react.js";
 // import buttonStyle from "assets/jss/material-kit-react/components/buttonStyle";
 
 const useStyles = makeStyles(styles);
-function BlogSection() {
+function BlogSection(props) {
   const classes = useStyles();
 
-    const [post, setPost] = useState('');
+  const [post, setPost] = useState('');
 
-    function handleChange(e) {
+  function handleChange(e) {
       setPost(e.target.value);
-    }
+  }
 
-    function handleSubmit(e) {
-      if (person !== '') {
+  function handleSubmit(e) {
+    if (post !== '') {
         props.addPost(post);
         setPost('');
       }
-      e.preventDefault();
-    }
+    e.preventDefault();
+  }
   
   return (
     <div className={classes.section}>
