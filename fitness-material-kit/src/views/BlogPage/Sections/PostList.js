@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 function PostList(props) {
-    const arr = props.contacts;
+    const arr = props.posts;
     const listItems = arr.map((val, index) =>
         <li key={index}>{val}</li>
     );
@@ -11,7 +11,7 @@ function PostList(props) {
 
 function mapStateToProps(state) {
     return {
-        contacts: state.contacts
+        posts: state.posts
     }
 }
 

@@ -1,12 +1,8 @@
 import React from "react";
-import { createStore } from 'redux'
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-
 // @material-ui/icons
 
 // core components
@@ -22,17 +18,18 @@ import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import BlogSection from "./Sections/BlogSection.js";
-import PostList from "./Sections/blog/PostList.js";
+import PostList from "./Sections/PostList.js";
+
+
 
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
-export default function LandingPage(props) {
+export default function BlogPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
   return (
-    <Provider store={store}>
     <div>
       <Header
         color="transparent"
@@ -62,14 +59,12 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-        
             <BlogSection />
             <PostList />
- 
         </div>
       </div>
       <Footer />
     </div>
-    </Provider>
+
   );
 }
