@@ -20,8 +20,6 @@ import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 import BlogSection from "./Sections/BlogSection.js";
 import PostList from "./Sections/PostList.js";
 
-
-
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
@@ -49,9 +47,11 @@ export default function BlogPage(props) {
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>Blog Page.</h1>
               <h4>
-                Whatever you want to get it, let us know about here.
+                Tell us about your fitness goals and progress.
                 Recipes, workouts, journey news, tips and tricks, and health hacks, BLOG IT ALL HERE!
               </h4>
+              <p> Please note this site is not for posts outside of fitness and whole body well being, 
+                please keep all posts related to current events, politics, etc. off of this site.</p>
               <br />
             </GridItem>
           </GridContainer>
@@ -59,8 +59,8 @@ export default function BlogPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-            <BlogSection />
-            <PostList />
+          <BlogSection />
+          <PostList />
         </div>
       </div>
       <Footer />
