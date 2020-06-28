@@ -14,7 +14,7 @@ import GridItem from "../../../components/Grid/GridItem.js";
 // import Button from "components/CustomButtons/Button.js";
 
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
-import { title } from "../../../assets/jss/material-kit-react.js";
+// import { title } from "../../../assets/jss/material-kit-react.js";
 // import buttonStyle from "assets/jss/material-kit-react/components/buttonStyle";
 
 const useStyles = makeStyles(styles);

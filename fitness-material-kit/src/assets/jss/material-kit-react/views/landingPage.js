@@ -20,6 +20,28 @@ const landingPageStyle = {
     maxWidth: "500px",
     margin: "10px auto 0"
   },
+  titles: {
+    ...title,
+    display: "inline-block",
+    position: "relative",
+    marginTop: "15px",
+    minHeight: "32px",
+    marginLeft: "1.25rem",
+    textDecoration: "none"
+  },
+  subtitles: {
+    fontSize: "1.313rem",
+    maxWidth: "500px",
+    margin: "10px auto 0",
+    color: "#999",
+    marginLeft: "1.25rem"
+  },
+  description: {
+    fontSize: "1.25rem",
+    color: "#999",
+    margin: "1.13rem",
+    padding: "1rem"
+  },
   main: {
     background: "#FFFFFF",
     position: "relative",

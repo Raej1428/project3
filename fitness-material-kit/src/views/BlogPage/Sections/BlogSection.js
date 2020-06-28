@@ -16,19 +16,34 @@ import styles from "../../../assets/jss/material-kit-react/views/landingPageSect
 
 const useStyles = makeStyles(styles);
 function BlogSection(props) {
-  const [post, setPost] = useState('');
+  // console.log("Here I am " + posts);
+  console.log("Here I am " + props);
+  const [posts, setPost] = useState('');
 
-  function handleChange(e) {
-    setPost(e.target.value);
-  }
+  // function handleChange(e) {
+  //   console.log(e.target.name + e.target.value);
+  //   const newPost = {...post};
+  //   console.log(newPost);
+  //   newPost[e.target.name] = e.target.value;
+  //   console.log(newPost);
+  //   setPost(newPost);
+  // }
 
   function handleSubmit(e) {
-    if (post !== '') {
-      props.addPost(post);
-      setPost('');
-    }
     e.preventDefault();
+    console.log(document.querySelector("#name").value);
+
+    const newPost = {
+      name: document.querySelector("#name").value,
+      title: document.querySelector("#title").value,
+      category: document.querySelector("#category").value,
+      details: document.querySelector("#details").value
+    }
+    console.log(newPost);
+    props.addPost(newPost);
+    setPost(newPost);
   }
+
   const classes = useStyles();
   return (
     <div className={classes.section}>
@@ -39,13 +54,11 @@ function BlogSection(props) {
             How's it going? Let us know.
             Found a new favorite recipe, workout, or reach one of your fitness goals, go ahead blog about it!
           </h5>
-          <form onSubmit={handleSubmit}>
+          <form>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput
-                  onChange={handleChange}
-                  value={post.name}
-                  labelText="Username:"
+                  labelText="Screenname:"
                   id="name"
                   formControlProps={{
                     fullWidth: true
@@ -54,8 +67,6 @@ function BlogSection(props) {
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput
-                  onChange={handleChange}
-                  value={post.title}
                   labelText="Title:"
                   id="title"
                   formControlProps={{
@@ -65,8 +76,6 @@ function BlogSection(props) {
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput
-                  onChange={handleChange}
-                  value={post.category}
                   labelText="Category:"
                   id="category"
                   formControlProps={{
@@ -75,10 +84,8 @@ function BlogSection(props) {
                 />
               </GridItem>
               <CustomInput
-                onChange={handleChange}
-                value={post.details}
                 labelText="The Details:"
-                id="message"
+                id="details"
                 formControlProps={{
                   fullWidth: true,
                   className: classes.textArea
@@ -89,7 +96,7 @@ function BlogSection(props) {
                 }}
               />
               <GridItem xs={12} sm={12} md={4}>
-                <Button type="submit" color="primary">Post</Button>
+                <Button onClick={handleSubmit} color="primary">Post</Button>
               </GridItem>
             </GridContainer>
           </form>
@@ -98,6 +105,7 @@ function BlogSection(props) {
     </div>
   );
 }
+
 
 const mapDispatchToProps = {
   addPost

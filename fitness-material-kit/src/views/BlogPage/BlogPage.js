@@ -19,12 +19,14 @@ import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 // Sections for this page
 import BlogSection from "./Sections/BlogSection.js";
 import PostList from "./Sections/PostList.js";
+import { addPost } from "./Sections/actions.js";
 
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
 export default function BlogPage(props) {
+  console.log(props);
   const classes = useStyles();
   const { ...rest } = props;
   return (
@@ -60,11 +62,10 @@ export default function BlogPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <BlogSection />
-          <PostList />
+          <PostList posts={props}/>
         </div>
       </div>
       <Footer />
     </div>
-
   );
 }

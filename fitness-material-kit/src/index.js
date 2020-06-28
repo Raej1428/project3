@@ -21,6 +21,7 @@ const initialState = {
 }
 
 function reducer(state = initialState, action) {
+  console.log(action, "hooray");
   switch (action.type) {
     case 'ADD_POST':
       return {
