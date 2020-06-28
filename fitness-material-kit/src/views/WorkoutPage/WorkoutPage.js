@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
+import WorkoutOne from "./WorkoutOne";
 import Header from "../../components/Header/Header.js";
 import Footer from "../../components/Footer/Footer.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
@@ -19,6 +20,7 @@ import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import WorkoutSection from "./Sections/WorkoutSection.js";
+import WorkoutOne from "./WorkoutOne.js";
 
 const dashboardRoutes = [];
 
@@ -57,6 +59,7 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <WorkoutSection />
+          <WorkoutOne />
         </div>
       </div>
       <Footer />
