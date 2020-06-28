@@ -1,5 +1,5 @@
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -16,6 +16,8 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import React, { Component } from 'react';
 import fetchPlayer from './fetchPlayer';
 import spfetch from './spfetch';
+import Button from "../../../components/CustomButtons/Button.js";
+// import buttonStyle from "../../../assets/jss/material-kit-react/components/buttonStyle";
 
 class SpotifyApp extends Component {
   // We might be logged in on load if the token could be extracted from the url hash

@@ -1,29 +1,26 @@
 import React from "react";
+// import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-// import { SpotifyApp } from "./SpotifyApp"
 // import React, { useState } from 'react';
 // import { connect } from 'react-redux'
 // import { addPost } from '../actions.js'
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
 // @material-ui/icons
 
 // core components
 import GridContainer from "../../../components/Grid/GridContainer.js";
 import GridItem from "../../../components/Grid/GridItem.js";
-// import CustomInput from "views/RecipePage/Sections/node_modules/components/CustomInput/CustomInput.js;
-// import Button from "views/RecipePage/Sections/node_modules/components/CustomButtons/Button.js;
-
+// import CustomInput from "../../..//components/CustomInput/CustomInput.js;
+// import Button from "../../..//components/CustomButtons/Button.js;
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
 import SpotifyApp from "./SpotifyApp.js";
-// import { title } from "views/RecipePage/Sections/node_modules/assets/jss/material-kit-react.js;
-// import buttonStyle from "assets/jss/material-kit-react/components/buttonStyle";
+// import { title } from "../../..//assets/jss/material-kit-react.js;
+// import buttonStyle from "../../../assets/jss/material-kit-react/components/buttonStyle";
 
 const useStyles = makeStyles(styles);
 export default function WorkoutSection() {
   const classes = useStyles();
-  
   return (
        <div className={classes.section}>
           <GridContainer>
