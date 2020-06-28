@@ -14,6 +14,7 @@ import WorkoutPage from "./views/WorkoutPage/WorkoutPage.js";
 import BlogPage from "./views/BlogPage/BlogPage.js";
 
 
+
 var hist = createBrowserHistory();
 
 const initialState = {
