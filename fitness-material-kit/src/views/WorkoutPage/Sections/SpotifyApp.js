@@ -180,7 +180,7 @@ class LoggedInScreen extends Component {
             </CardActionArea>
             <CardActions>
               <Button
-                size="small"
+                size="sm"
                 color="primary"
                 onClick={this.handlePlayTopTracks}
               >
