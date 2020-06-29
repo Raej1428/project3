@@ -20,7 +20,6 @@ import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import WorkoutSection from "./Sections/WorkoutSection.js";
-import WorkoutOne from "./WorkoutOne.js";
 
 const dashboardRoutes = [];
 

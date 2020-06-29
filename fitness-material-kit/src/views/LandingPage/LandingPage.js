@@ -3,6 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 // @material-ui/icons
 
@@ -20,7 +21,6 @@ import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
 import WorkoutSection from "./Sections/WorkoutSection.js";
-import LoginPage from "../LoginPage/LoginPage";
 
 const dashboardRoutes = [];
 
@@ -54,14 +54,11 @@ export default function LandingPage(props) {
                 Come explore the healthier side of living with DU Fitness. Do you, be healthy, start your journey here. 
               </h4>
               <br />
-              <Button
-                color="danger"
-                size="lg"
-                href={LoginPage}
-                target="_blank"
-              >
-                Login
-              </Button>
+             <Link to={"/login-page"} className={classes.link}>
+            <Button color="danger" size="lg">
+              Login
+            </Button>
+          </Link>
             </GridItem>
           </GridContainer>
         </div>
