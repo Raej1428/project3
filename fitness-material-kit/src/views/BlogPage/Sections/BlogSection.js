@@ -13,6 +13,7 @@ import Button from "../../../components/CustomButtons/Button.js";
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
 // import { title } from "../../../assets/jss/material-kit-react.js";
 // import buttonStyle from "assets/jss/material-kit-react/components/buttonStyle";
+// import BlogComments from "../../BlogComments/BlogComments";
 
 const useStyles = makeStyles(styles);
 function BlogSection(props) {
@@ -30,7 +31,7 @@ function BlogSection(props) {
   // }
 
   function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault(e);
     console.log(document.querySelector("#name").value);
 
     const newPost = {
@@ -97,6 +98,7 @@ function BlogSection(props) {
               />
               <GridItem xs={12} sm={12} md={4}>
                 <Button onClick={handleSubmit} color="primary">Post</Button>
+                <Button color="primary" href="/blog-comments">Comments</Button>
               </GridItem>
             </GridContainer>
           </form>
