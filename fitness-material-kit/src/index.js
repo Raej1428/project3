@@ -12,7 +12,7 @@ import LoginPage from "./views/LoginPage/LoginPage.js";
 import RecipePage from "./views/RecipePage/RecipePage.js";
 import WorkoutPage from "./views/WorkoutPage/WorkoutPage.js";
 import BlogPage from "./views/BlogPage/BlogPage.js";
-
+import BlogComments from "./views/BlogComments/BlogComments.js";
 
 
 var hist = createBrowserHistory();
@@ -40,6 +40,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={hist}>
       <Switch>
+        {/* <Route path="/blog-comments" component={BlogComments} /> */}
+        <Route path="/blog-comments" component={BlogComments} />
         <Route path="/blog-page" component={BlogPage} />
         <Route path="/workout-page" component={WorkoutPage} />
         <Route path="/recipe-page" component={RecipePage} />
