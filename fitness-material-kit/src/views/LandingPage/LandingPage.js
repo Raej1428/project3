@@ -14,14 +14,14 @@ import GridItem from "../../components/Grid/GridItem.js";
 import Button from "../../components/CustomButtons/Button.js";
 import HeaderLinks from "../../components/Header/HeaderLinks.js";
 import Parallax from "../../components/Parallax/Parallax.js";
-
+import { Link } from "react-router-dom";
 import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
 import WorkoutSection from "./Sections/WorkoutSection.js";
+import RegisterPage from "../RegisterPage/RegisterPage.js";
 import LoginPage from "../LoginPage/LoginPage";
-
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
@@ -34,7 +34,7 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="Material Kit React"
+        brand="Fitness Page"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -57,10 +57,12 @@ export default function LandingPage(props) {
               <Button
                 color="danger"
                 size="lg"
-                href={LoginPage}
-                target="_blank"
+                href={RegisterPage}
+            
               >
-                Login
+                <Link to="/register-page" className={classes.dropdownLink}>
+                Register Today!
+                </Link>
               </Button>
             </GridItem>
           </GridContainer>
