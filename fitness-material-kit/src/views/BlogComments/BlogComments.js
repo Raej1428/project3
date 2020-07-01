@@ -20,7 +20,7 @@ import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 // import BlogSection from "./Sections/BlogSection.js";
 // import PostList from "./Sections/PostList.js";
 import { addPost } from "./Sections/actions.js";
-import CommentSection from "./Sections/CommentSection.js";
+import Form from "./Sections/CommentSection.js";
 
 const dashboardRoutes = [];
 
@@ -31,7 +31,7 @@ export default function BlogComments(props) {
     const classes = useStyles();
     const { ...rest } = props;
     return (
-        <div>
+        <div className={classes.section}>
             <Header
                 color="transparent"
                 routes={dashboardRoutes}
@@ -62,11 +62,10 @@ export default function BlogComments(props) {
             </Parallax>
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div className={classes.container}>
-                    <CommentSection />
-
+                    <Form />
                 </div>
             </div>
             <Footer />
-        </div>
+        </ div>
     );
 }

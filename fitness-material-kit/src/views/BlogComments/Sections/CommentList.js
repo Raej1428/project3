@@ -5,10 +5,10 @@ import GridItem from "../../../components/Grid/GridItem.js";
 import { makeStyles } from "@material-ui/core/styles";
 import styles from "../../../assets/jss/material-kit-react/views/landingPage.js";
 // import Parallax from "../../../components/Parallax/Parallax.js";
-import Button from "../../../components/CustomButtons/Button"
 
 
-function PostList(props) {
+
+function CommentList(props) {
     const useStyles = makeStyles(styles);
     const classes = useStyles();
     const arr = props.posts;
@@ -21,7 +21,6 @@ function PostList(props) {
             <hr />
             <p className={classes.description}>{items.details}</p>
             <hr />
-            <Button color="primary">Comment</Button>
         </div>
 
     );
@@ -47,4 +46,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(PostList)
+export default connect(mapStateToProps)(CommentList)

@@ -1,7 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 import { useState } from 'react';
 import { connect } from 'react-redux'
-import { addPost } from './actions.js'
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
@@ -14,101 +13,126 @@ import styles from "../../../assets/jss/material-kit-react/views/landingPageSect
 // import { title } from "../../../assets/jss/material-kit-react.js";
 // import buttonStyle from "assets/jss/material-kit-react/components/buttonStyle";
 // import BlogComments from "../../BlogComments/BlogComments";
+import { addPost } from './actions.js'
+const classes = makeStyles(styles);
 
-const useStyles = makeStyles(styles);
-function CommentSection(props) {
-    // console.log("Here I am " + posts);
-    console.log("Here I am " + props);
-    const [posts, setPost] = useState('');
+class Form extends Component {
+    // Setting the component's initial state
+    state = {
+        profile: "",
+        title: "",
+        category: "",
+        comment: "",
+    };
 
-    // function handleChange(e) {
-    //   console.log(e.target.name + e.target.value);
-    //   const newPost = {...post};
-    //   console.log(newPost);
-    //   newPost[e.target.name] = e.target.value;
-    //   console.log(newPost);
-    //   setPost(newPost);
-    // }
+    handleInputChange = event => {
+        // Getting the value and name of the input which triggered the change
+        const { name, value } = event.target;
 
-    function postComment(e) {
-        e.preventDefault(e);
-        console.log(document.querySelector("#name").value);
+        // Updating the input's state
+        this.setState({
+            [name]: value
+        });
+    };
 
-        const newPost = {
-            name: document.querySelector("#name").value,
-            title: document.querySelector("#title").value,
-            category: document.querySelector("#category").value,
-            details: document.querySelector("#details").value
-        }
-        console.log(newPost);
-        props.addPost(newPost);
-        setPost(newPost);
+    updatePost = event => {
+        event.preventDefault();
+        // this.setState(document.getElementsByClassName("testCommentPost"));
+        alert(`Comment Posted!`);
+
     }
 
-    const classes = useStyles();
-    return (
-        <div className={classes.section}>
-            <GridContainer justify="center">
-                <GridItem cs={12} sm={12} md={8}>
-                    <h2 className={classes.title}>Post a Comment</h2>
-                    <h5 className={classes.description}>
-                        Find a helpful profile, blog post, recipe, or workout? Let them know what you think!
+    handleFormSubmit = event => {
+        // Preventing the default behavior of the form submit (which is to refresh the page)
+        event.preventDefault();
+
+        // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+        this.setState({
+            profile: "",
+            title: "",
+            category: "",
+            comment: "",
+
+        });
+        console.log(this.state.profile)
+    };
+
+    render() {
+        return (
+            <div className={classes.section}>
+                <GridContainer justify="center">
+                    <GridItem cs={12} sm={12} md={8}>
+                        <h2 className={classes.title}>Post a Comment</h2>
+                        <h5 className={classes.description}>
+                            Find a helpful profile, blog post, recipe, or workout? Let them know what you think!
           </h5>
-                    <form>
-                        <GridContainer>
-                            <GridItem xs={12} sm={12} md={6}>
+                        <form>
+                            {/* <CommentList posts={props} /> */}
+                            <GridContainer>
+                                <GridItem xs={12} sm={12} md={6}>
+                                    <CustomInput
+                                        value={this.state.profile}
+                                        labelText="Associated Profile:"
+                                        name="profile"
+                                        onChange={this.handleInputChange}
+                                        formControlProps={{
+                                            fullWidth: true
+                                        }}
+                                    />
+                                </GridItem>
+                                <GridItem xs={12} sm={12} md={6}>
+                                    <CustomInput
+                                        value={this.state.title}
+                                        labelText="Article, Recipe, or Workout Title:"
+                                        name="title"
+                                        onChange={this.handleInputChange}
+                                        formControlProps={{
+                                            fullWidth: true
+                                        }}
+                                    />
+                                </GridItem>
+                                <GridItem xs={12} sm={12} md={6}>
+                                    <CustomInput
+                                        value={this.state.category}
+                                        labelText="Category:"
+                                        name="category"
+                                        onChange={this.handleInputChange}
+                                        formControlProps={{
+                                            fullWidth: true
+                                        }}
+                                    />
+                                </GridItem>
                                 <CustomInput
-                                    labelText="Associated Profile:"
-                                    id="profile"
+                                    value={this.state.comment}
+                                    labelText="Comment:"
+                                    name="comment"
+                                    onChange={this.handleInputChange}
                                     formControlProps={{
-                                        fullWidth: true
+                                        fullWidth: true,
+                                        className: classes.textArea
+                                    }}
+                                    inputProps={{
+                                        multiline: true,
+                                        rows: 5
                                     }}
                                 />
-                            </GridItem>
-                            <GridItem xs={12} sm={12} md={6}>
-                                <CustomInput
-                                    labelText="Article, Recipe, or Workout Title:"
-                                    id="title"
-                                    formControlProps={{
-                                        fullWidth: true
-                                    }}
-                                />
-                            </GridItem>
-                            <GridItem xs={12} sm={12} md={6}>
-                                <CustomInput
-                                    labelText="Category:"
-                                    id="category"
-                                    formControlProps={{
-                                        fullWidth: true
-                                    }}
-                                />
-                            </GridItem>
-                            <CustomInput
-                                labelText="Comment:"
-                                id="comment"
-                                formControlProps={{
-                                    fullWidth: true,
-                                    className: classes.textArea
-                                }}
-                                inputProps={{
-                                    multiline: true,
-                                    rows: 5
-                                }}
-                            />
-                            <GridItem xs={12} sm={12} md={4}>
-                                <Button onClick={postComment} color="primary">Post</Button>
-                            </GridItem>
-                        </GridContainer>
-                    </form>
-                </GridItem>
-            </GridContainer>
-        </div>
-    );
+                                <GridItem xs={12} sm={12} md={4}>
+                                    <Button onClick={this.handleFormSubmit, this.updatePost} color="primary">Comment</Button>
+                                    <h1 className="testCommentPost" fontsize="40px" color="primary">dddd</h1>
+                                </GridItem>
+                            </GridContainer>
+                        </form>
+                    </GridItem>
+                </GridContainer>
+            </div>
+        );
+    }
 }
+
 
 
 const mapDispatchToProps = {
     addPost
 }
 
-export default connect(null, mapDispatchToProps)(CommentSection)
+export default connect(null, mapDispatchToProps)(Form)

@@ -53,7 +53,7 @@ function BlogSection(props) {
           <h2 className={classes.title}>Blog</h2>
           <h5 className={classes.description}>
             How's it going? Let us know.
-            Found a new favorite recipe, workout, or reach one of your fitness goals, go ahead blog about it!
+            Find a new favorite recipe, workout, or reach one of your fitness goals? go ahead blog about it!
           </h5>
           <form>
             <GridContainer>
@@ -98,7 +98,6 @@ function BlogSection(props) {
               />
               <GridItem xs={12} sm={12} md={4}>
                 <Button onClick={handleSubmit} color="primary">Post</Button>
-                <Button color="primary" href="/blog-comments">Comments</Button>
               </GridItem>
             </GridContainer>
           </form>
