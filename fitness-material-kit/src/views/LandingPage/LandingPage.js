@@ -3,6 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 // @material-ui/icons
 
@@ -22,6 +23,7 @@ import ProductSection from "./Sections/ProductSection.js";
 import WorkoutSection from "./Sections/WorkoutSection.js";
 import RegisterPage from "../RegisterPage/RegisterPage.js";
 import LoginPage from "../LoginPage/LoginPage";
+
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
@@ -58,7 +60,6 @@ export default function LandingPage(props) {
                 color="danger"
                 size="lg"
                 href={RegisterPage}
-            
               >
                 <Link to="/register-page" className={classes.dropdownLink}>
                 Register Today!

@@ -3,6 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 // @material-ui/icons
 
@@ -19,7 +20,6 @@ import styles from "../../../assets/jss/material-kit-react/views/landingPageSect
 import team1 from "../../../assets/img/faces/avatar.jpg";
 import team2 from "../../../assets/img/faces/christian.jpg";
 import team3 from "../../../assets/img/faces/kendall.jpg";
-import BlogPage from "../../BlogPage/BlogPage.js";
 
 const useStyles = makeStyles(styles);
 
@@ -48,8 +48,8 @@ export default function WorkoutSection() {
               <CardBody>
                 <p className={classes.description}>
                   This is a workout program targeted at shaping the lower body for maximum results.
-                  <a href="#pablo">(Placeholder Full Workout)</a>
                 </p>
+                <a href={"/workout-page"}>Workouts Page</a>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
                 <Button
@@ -89,8 +89,8 @@ export default function WorkoutSection() {
               <CardBody>
                 <p className={classes.description}>
                   This is a workout program targeted at shaping the upper body for maximum results.
-                  <a href="#pablo">(Placeholder Full Workout)</a>
                 </p>
+                <a href={"/workout-page"}>Workouts Page</a>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
                 <Button
@@ -123,8 +123,8 @@ export default function WorkoutSection() {
               <CardBody>
                 <p className={classes.description}>
                   This is a workout program targeted at shaping the abdomen for maximum results.
-                  <a href="#pablo">(Placeholder Full Workout)</a>
                 </p>
+                <a href={"/workout-page"}>Workouts Page</a>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
                 <Button
@@ -157,15 +157,15 @@ export default function WorkoutSection() {
                 <img src={team1} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
-                EveryDay Pliometrics
+                Rock Solid.
                 <br />
-                <small className={classes.smallTitle}>Lower Body Workout</small>
+                <small className={classes.smallTitle}>Back-Core Body Workout</small>
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                  This is a workout program targeted at shaping the whole body for maximum results.
-                  <a href="#pablo">(Placeholder Full Workout)</a>
+                  This is a workout program targeted at shaping the core of the body, the back for maximum results.
                 </p>
+                <a href={"/workout-page"}>Workouts Page</a>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
                 <Button
@@ -200,22 +200,17 @@ export default function WorkoutSection() {
               <h4 className={classes.cardTitle}>
                 Need More...? Check out the Blog Page for user submitted workouts and recipes!
                 <br />
-                <small className={classes.smallTitle}>More user submitted workouts in the Blog Page</small>
+                <small className={classes.smallTitle}>More user submitted workouts on our Blog Page.</small>
               </h4>
               <CardBody>
-                <p className={classes.description}>
-                 Check it out!
-                </p>
+              <Link to={"/blog-page"} className={classes.link}>
+                  <Button color="danger" size="lg">
+                    Blog Page
+                  </Button>
+                </Link>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
-                <Button
-                  color="danger"
-                  size="lg"
-                  href={BlogPage}
-                  target="_blank"
-                >
-                  Blog Page
-                </Button>
+          
               </CardFooter>
             </Card>
           </GridItem>

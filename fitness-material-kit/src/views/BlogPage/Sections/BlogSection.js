@@ -13,6 +13,7 @@ import Button from "../../../components/CustomButtons/Button.js";
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
 // import { title } from "../../../assets/jss/material-kit-react.js";
 // import buttonStyle from "assets/jss/material-kit-react/components/buttonStyle";
+// import BlogComments from "../../BlogComments/BlogComments";
 
 const useStyles = makeStyles(styles);
 function BlogSection(props) {
@@ -30,7 +31,7 @@ function BlogSection(props) {
   // }
 
   function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault(e);
     console.log(document.querySelector("#name").value);
 
     const newPost = {
@@ -52,7 +53,7 @@ function BlogSection(props) {
           <h2 className={classes.title}>Blog</h2>
           <h5 className={classes.description}>
             How's it going? Let us know.
-            Found a new favorite recipe, workout, or reach one of your fitness goals, go ahead blog about it!
+            Find a new favorite recipe, workout, or reach one of your fitness goals? go ahead blog about it!
           </h5>
           <form>
             <GridContainer>
