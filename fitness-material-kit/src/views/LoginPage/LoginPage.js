@@ -18,7 +18,7 @@ import CardBody from "../../components/Card/CardBody.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardFooter from "../../components/Card/CardFooter.js";
 import CustomInput from "../../components/CustomInput/CustomInput.js";
-
+import RegisterPage from "../RegisterPage/RegisterPage";
 import styles from "../../assets/jss/material-kit-react/views/loginPage.js";
 
 import image from "../../assets/img/bg7.jpg";
@@ -27,7 +27,7 @@ const useStyles = makeStyles(styles);
 
 export default function LoginPage(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
-  setTimeout(function() {
+  setTimeout(function () {
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
@@ -140,6 +140,14 @@ export default function LoginPage(props) {
                   <CardFooter className={classes.cardFooter}>
                     <Button simple color="primary" size="lg">
                       Get started
+                    </Button>
+                    <Button
+                      color="danger"
+                      size="lg"
+                      href={RegisterPage}
+                      target="/register-page"
+                    >
+                      Register Today!
                     </Button>
                   </CardFooter>
                 </form>
