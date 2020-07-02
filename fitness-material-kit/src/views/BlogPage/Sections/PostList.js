@@ -5,7 +5,10 @@ import GridItem from "../../../components/Grid/GridItem.js";
 import { makeStyles } from "@material-ui/core/styles";
 import styles from "../../../assets/jss/material-kit-react/views/landingPage.js";
 // import Parallax from "../../../components/Parallax/Parallax.js";
-import Button from "../../../components/CustomButtons/Button"
+import Button from "../../../components/CustomButtons/Button";
+import CommentGroup from "./CommentGroup";
+import Comment from "./Comment";
+import CommentAdd from "./CommentAdd";
 
 
 function PostList(props) {
@@ -21,11 +24,9 @@ function PostList(props) {
             <hr />
             <p className={classes.description}>{items.details}</p>
             <hr />
-            <Button color="primary">Comment</Button>
+            <CommentGroup />
         </div>
-
     );
-    console.log(listItems);
     return (
         // <Parallax>
         <div className={classes.containter}>
@@ -40,6 +41,7 @@ function PostList(props) {
         // </Parallax>
     );
 }
+
 
 function mapStateToProps(state) {
     return {
