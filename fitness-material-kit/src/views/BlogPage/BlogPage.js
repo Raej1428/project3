@@ -21,6 +21,9 @@ import BlogSection from "./Sections/BlogSection.js";
 import PostList from "./Sections/PostList.js";
 import { addPost } from "./Sections/actions.js";
 // import BlogComments from "../BlogComments/BlogComments.js";
+import CommentGroup from "./Sections/CommentGroup";
+import Comment from "./Sections/Comment";
+import CommentAdd from "./Sections/CommentAdd";
 
 const dashboardRoutes = [];
 
