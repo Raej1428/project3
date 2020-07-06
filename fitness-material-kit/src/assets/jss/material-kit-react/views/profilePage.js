@@ -1,23 +1,20 @@
-import { container, title } from "../../material-kit-react";
+import { container, title, cardTitle, cardSubtitle } from "../../material-kit-react";
 
 import imagesStyle from "../../../../assets/jss/material-kit-react/imagesStyles.js";
 
 const profilePageStyle = {
   container,
   profile: {
-    textAlign: "center",
+    textAlign: "left",
     "& img": {
-      maxWidth: "160px",
-      width: "100%",
       margin: "0 auto",
       transform: "translate3d(0, -50%, 0)"
     }
   },
   description: {
     margin: "1.071rem auto 0",
-    maxWidth: "600px",
     color: "#999",
-    textAlign: "center !important"
+    textAlign: "left !important"
   },
   name: {
     marginTop: "-80px"
@@ -44,7 +41,6 @@ const profilePageStyle = {
   },
   socials: {
     marginTop: "0",
-    width: "100%",
     transform: "none",
     left: "0",
     top: "0",
@@ -53,9 +49,14 @@ const profilePageStyle = {
     fontSize: "20px",
     color: "#999"
   },
+  cardTitle,
+  cardSubtitle,
+  smallTitle: {
+    color: "#6c757d"
+  },
   navWrapper: {
     margin: "20px auto 50px auto",
-    textAlign: "center"
+    textAlign: "left"
   }
 };
 

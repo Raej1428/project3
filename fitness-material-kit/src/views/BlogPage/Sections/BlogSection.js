@@ -1,38 +1,28 @@
 import React from "react";
 import { useState } from 'react';
 import { connect } from 'react-redux'
-import { addPost } from './actions.js'
+import { addPost } from './actions.js';
+import "firebase/firestore";
+import firestoreDB from "../firebase-redux/firestore"
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-// @material-ui/icons
 // core components
 import GridContainer from "../../../components/Grid/GridContainer.js";
 import GridItem from "../../../components/Grid/GridItem.js";
 import CustomInput from "../../../components/CustomInput/CustomInput.js";
 import Button from "../../../components/CustomButtons/Button.js";
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
-// import { title } from "../../../assets/jss/material-kit-react.js";
-// import buttonStyle from "assets/jss/material-kit-react/components/buttonStyle";
 
 const useStyles = makeStyles(styles);
-function BlogSection(props) {
-  // console.log("Here I am " + posts);
-  console.log("Here I am " + props);
-  const [posts, setPost] = useState('');
 
-  // function handleChange(e) {
-  //   console.log(e.target.name + e.target.value);
-  //   const newPost = {...post};
-  //   console.log(newPost);
-  //   newPost[e.target.name] = e.target.value;
-  //   console.log(newPost);
-  //   setPost(newPost);
-  // }
+function BlogSection(props) {
+  const [posts, setPost] = useState('');
+  console.log("Here I am " + posts);
+  console.log("Here I am " + props);
 
   function handleSubmit(e) {
-    e.preventDefault();
+    // e.preventDefault();
     console.log(document.querySelector("#name").value);
-
     const newPost = {
       name: document.querySelector("#name").value,
       title: document.querySelector("#title").value,
@@ -43,6 +33,21 @@ function BlogSection(props) {
     props.addPost(newPost);
     setPost(newPost);
   }
+
+ function addPostFire(){
+    const newPost = {
+      name: document.querySelector("#name").value,
+      title: document.querySelector("#title").value,
+      category: document.querySelector("#category").value,
+      details: document.querySelector("#details").value
+    }
+    console.log(newPost);
+    return firestoreDB.collection("blog-page").add(newPost)
+    .then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+    }).catch(function(error) {
+    console.error("Error adding document: ", error);});
+ }
 
   const classes = useStyles();
   return (
@@ -96,7 +101,10 @@ function BlogSection(props) {
                 }}
               />
               <GridItem xs={12} sm={12} md={4}>
-                <Button onClick={handleSubmit} color="primary">Post</Button>
+                <Button onClick={() => {
+                  handleSubmit();
+                  addPostFire();
+                }} color="primary">Post</Button>
               </GridItem>
             </GridContainer>
           </form>
@@ -104,11 +112,10 @@ function BlogSection(props) {
       </GridContainer>
     </div>
   );
-}
-
+};
 
 const mapDispatchToProps = {
   addPost
-}
+};
 
-export default connect(null, mapDispatchToProps)(BlogSection)
+export default connect(addPost, mapDispatchToProps)(BlogSection)
