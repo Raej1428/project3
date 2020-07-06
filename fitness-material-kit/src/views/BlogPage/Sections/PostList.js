@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // importing material components
+import CommentGroup from "./CommentGroup";
 import GridContainer from "../../../components/Grid/GridContainer.js";
 import GridItem from "../../../components/Grid/GridItem.js";
 import styles from "../../../assets/jss/material-kit-react/views/landingPage.js";
@@ -9,6 +10,7 @@ import reducer from "../reducers/reducer";
 import "firebase/firestore";
 import firestoreDB from "../firebase-redux/firestore";
 // import Parallax from "../../../components/Parallax/Parallax.js";
+
 
 class PostList extends React.Component {
     constructor(props) {
@@ -47,6 +49,7 @@ class PostList extends React.Component {
                              </div>
                         </GridItem>
                     </GridContainer>
+                    <CommentGroup />
             </div>)
     }
 } 
@@ -74,18 +77,27 @@ function PostList(props) {
             <hr />
             <p className={classes.description}>{items.details}</p>
             <hr />
+
         </div>
     );
     return (
+
+            <CommentGroup />
+        </div>
+    );
+    return (
+        // <Parallax>
+
         <div className={classes.containter}>
             <GridContainer justify="center">
                 <GridItem >
                     <div className={classes.mainRaised}>
                         {listItems}
                     </div>
-                </GridItem>
+      </GridItem>
             </GridContainer>
         </div>
+
     )
 }
 
@@ -95,4 +107,5 @@ firestoreDB.collection("blog-page").get().then(function(querySnapshot) {
         });
 });
 */
+
 

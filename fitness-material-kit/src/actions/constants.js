@@ -1,0 +1,15 @@
+export const SET_USER = "SET_USER";
+export const LOGOUT = "LOGOUT";
+export const GET_ERRORS = "GET_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const SET_TOKEN = "SET_TOKEN";
+export const FIND_TOKEN = "FIND_TOKEN";
+export const UPDATE_USER_SETTINGS = "UPDATE_USER_SETTINGS";
+export const GET_USERS_LIST = "GET_USERS_LIST";
+export const USERS_LOADING = "USERS_LOADING";
+export const GET_USER_RECORD = "GET_USER_RECORD";
+export const GET_USER_RECEPIE = "GET_USER_RECEPIE";
+export const GET_SETTINGS = "GET_SETTINGS";
+export const GET_STATS = "GET_STATS";
+export const GET_USER_DATA = "GET_USER_DATA";
+export const SET_SETTINGS = "SET_SETTINGS";
