@@ -31,7 +31,7 @@ const rrfConfig = {
   store: store,
 	config: {
     enableLogging: true },
-    dispatch: store
+    dispatch: rootReducer
 }
 
 ReactDOM.render(
