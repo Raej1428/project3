@@ -17,16 +17,6 @@ import WorkoutPage from "./views/WorkoutPage/WorkoutPage.js";
 import BlogPage from "./views/BlogPage/BlogPage.js";
 import { createStore } from 'redux';
 import rootReducer from './views/BlogPage/reducers/reducer';
-// import { setCurrentUser } from "./actions/authorizationAction";
-// Check for token
-// if (localStorage.jwtToken) {
-// 	// Set auth token header auth
-// 	setAuthToken(localStorage.jwtToken);
-// 	// Decode token and get user info
-// 	const decoded = jwt_decode(localStorage.jwtToken);
-// 	// Set user and isAuthenticated
-// 	store.dispatch(setCurrentUser(decoded));
-// }
 
 const hist = createBrowserHistory();
 

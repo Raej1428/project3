@@ -3,9 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
 // @material-ui/icons
-
 // core components
 import WorkoutOne from "./WorkoutOne";
 import Header from "../../components/Header/Header.js";
@@ -15,9 +13,7 @@ import GridItem from "../../components/Grid/GridItem.js";
 // import Button from "../../components/CustomButtons/Button.js";
 import HeaderLinks from "../../components/Header/HeaderLinks.js";
 import Parallax from "../../components/Parallax/Parallax.js";
-
 import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
-
 // Sections for this page
 import WorkoutSection from "./Sections/WorkoutSection.js";
 
