@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import CommentAdd from "./CommentAdd";
 
 class Comment extends Component {
     constructor(props) {

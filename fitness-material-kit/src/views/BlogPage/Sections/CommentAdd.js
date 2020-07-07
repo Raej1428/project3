@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CommentGroup from "./CommentGroup";
 import Button from "../../../components/CustomButtons/Button";
 
 function CommentAdd(props) {

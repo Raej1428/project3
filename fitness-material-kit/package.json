@@ -3,7 +3,7 @@
   "version": "1.9.0",
   "description": "Material Kit React. Coded by Creative Tim",
   "private": true,
-  "proxy": "http://localhost:5000/",
+  "proxy": "http://localhost:3000/",
   "main": "src/index.js",
   "dependencies": {
     "@firebase/app-types": "0.x",

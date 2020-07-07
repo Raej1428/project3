@@ -3,10 +3,6 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
-
-// @material-ui/icons
-
 // core components
 import Header from "../../components/Header/Header.js";
 import Footer from "../../components/Footer/Footer.js";
@@ -17,12 +13,11 @@ import HeaderLinks from "../../components/Header/HeaderLinks.js";
 import Parallax from "../../components/Parallax/Parallax.js";
 import { Link } from "react-router-dom";
 import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
-
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
 import WorkoutSection from "./Sections/WorkoutSection.js";
 import RegisterPage from "../RegisterPage/RegisterPage.js";
-import LoginPage from "../LoginPage/LoginPage";
+// import LoginPage from "../LoginPage/LoginPage";
 
 const dashboardRoutes = [];
 
@@ -45,7 +40,7 @@ export default function LandingPage(props) {
         }}
         {...rest}
       />
-      <Parallax filter image={require("assets/img/landing-bg.jpg")}>
+      <Parallax filter image={require("assets/img/Running-in-the-Rain.jpg")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
@@ -59,8 +54,7 @@ export default function LandingPage(props) {
               <Button
                 color="danger"
                 size="lg"
-                href={RegisterPage}
-              >
+                href={RegisterPage}>
                 <Link to="/register-page" className={classes.dropdownLink}>
                 Register Today!
                 </Link>
