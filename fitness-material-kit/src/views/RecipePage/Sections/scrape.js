@@ -1,40 +1,47 @@
 var cheerio = require("cheerio");
 var axios = require("axios");
 
-console.log("\n-=#=--=#=--=#=--=#=--=#=--=#=-\n" +
-    "Grabbing Healthy Recipies\n" +
-    "from allrecipies.com:" +
-    "\n-=#=--=#=--=#=--=#=--=#=--=#=-\n");
+var scrape = function () {
 
-axios.get("https://www.allrecipes.com/recipes/84/healthy-recipes/").then(function (response) {
+    console.log("\n-=#=--=#=--=#=--=#=--=#=--=#=-\n" +
+        "Grabbing Healthy Recipies\n" +
+        "from allrecipies.com:" +
+        "\n-=#=--=#=--=#=--=#=--=#=--=#=-\n");
 
-    var $ = cheerio.load(response.data);
+    axios.get("https://www.allrecipes.com/recipes/84/healthy-recipes/").then(function (response) {
 
-    var results = [];
+        var $ = cheerio.load(response.data);
 
-    $(".fixed-recipe-card").each(function (i, element) {
+        var results = [];
 
-        var title = $(this)
-            .find(".fixed-recipe-card__title-link")
-            .first()
-            .text()
-            .trim();
+        $(".fixed-recipe-card").each(function (i, element) {
 
-        var sum = $(this)
-            .find(".fixed-recipe-card__description")
-            .text()
-            .trim();
+            var title = $(this)
+                .find(".fixed-recipe-card__title-link")
+                .first()
+                .text()
+                .trim();
 
-        var link = $(this).find("a")
+            var sum = $(this)
+                .find(".fixed-recipe-card__description")
+                .text()
+                .trim();
 
-            .attr("href");
+            var link = $(this).find("a")
 
-        results.push({
-            title: title,
-            summary: sum,
-            link: link
+                .attr("href");
+
+            results.push({
+                title: title,
+                summary: sum,
+                link: link
+            });
         });
+
+        console.log(results);
     });
 
-    console.log(results);
-});
+};
+
+// Export the function, so other files in our backend can use it
+module.exports = scrape;
