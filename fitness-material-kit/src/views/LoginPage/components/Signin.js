@@ -63,6 +63,7 @@ function SignUp(props) {
         return firestoreDB.collection("users").add(newUser)
             .then(function (docRef) {
                 console.log("Document written with ID: ", docRef.id);
+                alert("You Have Been Successfully Signed Up!");
                 reset("blogForm");
             }).catch(function (error) {
                 console.error("Error adding document: ", error);
