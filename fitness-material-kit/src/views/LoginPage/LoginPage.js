@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import { loginUser } from "./actions/login";
-import { Redirect, Link } from "react-router-dom";
+import "firebase/firestore";
+import firestoreDB from "../BlogPage/firebase-redux/firestore";
+import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -26,41 +28,38 @@ import image from "../../assets/img/bg7.jpg";
 
 const useStyles = makeStyles(styles);
 
-export default function LoginPage(props) {
+function LoginPage(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   setTimeout(function () {
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
   const { ...rest } = props;
+  const [user, setUser] = useState('');
+  console.log("Here I am " + user);
+  console.log("Here I am " + props);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [redirect, setRedirect] = useState(false);
-
-  const dispatch = useDispatch();
-  const logInUserAction = (email, password) => dispatch(loginUser(email, password));
-
-  const login = async (e) => {
-    e.preventDefault()
-    console.log(email, password)
-    if (email !== "" && password !== "") {
-      console.log("login user in");
-      let user = logInUserAction(email, password);
-      if (user) {
-        setRedirect(true);
-      }
-
-    } else {
-      console.log("need to fill the credentials");
-      alert("Empty Login Information, Try Again!");
+  function handleSubmit(e) {
+    // e.preventDefault();
+    console.log(document.querySelector("#password").value);
+    const userCred = {
+      email: document.querySelector("#email").value,
+      password: document.querySelector("#password").value
     }
-
+    console.log(userCred);
+    props.loginUser(userCred);
+    setUser(userCred);
   }
 
-  const redirectTo = redirect;
-  if (redirectTo) {
-    return <Redirect to="/" />
+  function loginUserFire() {
+    const userCred = {
+      email: document.querySelector("#email").value,
+      password: document.querySelector("#password").value
+    }
+    console.log(userCred);
+    return firestoreDB.collection("usrs").where("email", "==", userCred.email).where("password", "==", userCred.password)
+      .then(alert("You've Been Logged In"))
+      .catch(err => console.log(err), alert("You were not logged in"));
   }
 
   return (
@@ -84,7 +83,10 @@ export default function LoginPage(props) {
           <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={4}>
               <Card className={classes[cardAnimaton]}>
-                <form className={classes.form} onSubmit={login}>
+                <form className={classes.form} onSubmit={() => {
+                  handleSubmit();
+                  loginUserFire();
+                }}>
                   <CardHeader color="primary" className={classes.cardHeader}>
                     <h4>Login</h4>
                   </CardHeader>
@@ -92,14 +94,11 @@ export default function LoginPage(props) {
                   <CardBody>
                     <CustomInput
                       labelText="Email"
-                      name="email"
-                      value={email}
-                      onChange={(event) => setEmail(event.tareget.value)}
+                      id="email"
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
-                        type: "email",
                         endAdornment: (
                           <InputAdornment position="end">
                             <Email className={classes.inputIconsColor} />
@@ -109,15 +108,11 @@ export default function LoginPage(props) {
                     />
                     <CustomInput
                       labelText="Password"
-                      name="pass"
-                      value={password}
-                      onChange={(event) => {setPassword(event.target.value)}}
+                      id="password"
                       formControlProps={{
                         fullWidth: true
                       }}
                       inputProps={{
-                        type: "password",
-                       
                         endAdornment: (
                           <InputAdornment position="end">
                             <Icon className={classes.inputIconsColor}>
@@ -149,3 +144,9 @@ export default function LoginPage(props) {
     </div>
   );
 }
+
+const mapDispatchToProps = {
+  loginUser
+};
+
+export default connect(loginUser, mapDispatchToProps)(LoginPage)

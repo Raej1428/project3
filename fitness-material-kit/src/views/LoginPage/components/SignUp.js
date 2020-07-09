@@ -1,8 +1,7 @@
 import React from "react";
 import { reset } from "redux-form"
 import { useState } from 'react';
-import { connect } from 'react-redux'
-import { addPost } from './actions.js';
+import { connect } from 'react-redux';
 import "firebase/firestore";
 import firestoreDB from "../firebase-redux/firestore"
 // @material-ui/core components
@@ -13,39 +12,36 @@ import GridItem from "../../../components/Grid/GridItem.js";
 import CustomInput from "../../../components/CustomInput/CustomInput.js";
 import Button from "../../../components/CustomButtons/Button.js";
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
+import { createUser } from "../actions/signin.js";
 
 const useStyles = makeStyles(styles);
 
-function BlogSection(props) {
-  const [posts, setPost] = useState('');
-  console.log("Here I am " + posts);
+function SignUp(props) {
+  const [user, setPost] = useState('');
+  console.log("Here I am " + user);
   console.log("Here I am " + props);
 
   function handleSubmit(e) {
     // e.preventDefault();
-    console.log(document.querySelector("#name").value);
-    const newPost = {
-      name: document.querySelector("#name").value,
-      title: document.querySelector("#title").value,
-      category: document.querySelector("#category").value,
-      details: document.querySelector("#details").value,
+    console.log(document.querySelector("#email").value);
+    const newUser = {
+      email: document.querySelector("#email").value,
+      password: document.querySelector("#password").value,
       key: Date.now()
     }
-    console.log(newPost);
-    props.addPost(newPost);
-    setPost(newPost);
+    console.log(newUser);
+    props.addPost(newUser);
+    setPost(newUser);
   }
 
- function addPostFire(){
-    const newPost = {
-      name: document.querySelector("#name").value,
-      title: document.querySelector("#title").value,
-      category: document.querySelector("#category").value,
-      details: document.querySelector("#details").value,
+ function addUserFire(){
+    const newUser = {
+      email: document.querySelector("#email").value,
+      password: document.querySelector("#password").value,
       key: Date.now()
     }
-    console.log(newPost);
-    return firestoreDB.collection("blog-page").add(newPost)
+    console.log(newUser);
+    return firestoreDB.collection("users").add(newUser)
     .then(function(docRef) {
     console.log("Document written with ID: ", docRef.id);
       reset("blogForm");
@@ -58,21 +54,20 @@ function BlogSection(props) {
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem cs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Blog</h2>
+          <h2 className={classes.password}>Sign Up!</h2>
           <h5 className={classes.description}>
-            How's it going? Let us know.
-            Find a new favorite recipe, workout, or reach one of your fitness goals? go ahead blog about it!
+            Sign up for exclusive benefits in the future!
           </h5>
           <form onSubmit={() => {
                   handleSubmit();
-                  addPostFire();
+                  addUserFire();
                 }}  
-                className="blogForm">
+                id="blogForm">
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput
-                  labelText="Screenname:"
-                  id="name"
+                  labelText="Email"
+                  id="email"
                   formControlProps={{
                     fullWidth: true
                   }}
@@ -80,34 +75,13 @@ function BlogSection(props) {
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput
-                  labelText="Title:"
-                  id="title"
+                  labelText="password:"
+                  id="password"
                   formControlProps={{
                     fullWidth: true
                   }}
                 />
               </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                  labelText="Category:"
-                  id="category"
-                  formControlProps={{
-                    fullWidth: true
-                  }}
-                />
-              </GridItem>
-              <CustomInput
-                labelText="The Details:"
-                id="details"
-                formControlProps={{
-                  fullWidth: true,
-                  className: classes.textArea
-                }}
-                inputProps={{
-                  multiline: true,
-                  rows: 5
-                }}
-              />
               <GridItem xs={12} sm={12} md={4}>
                 <Button  type="submit"  color="primary">Post</Button>
               </GridItem>
@@ -120,7 +94,7 @@ function BlogSection(props) {
 };
 
 const mapDispatchToProps = {
-  addPost
+  createUser
 };
 
-export default connect(addPost, mapDispatchToProps)(BlogSection)
+export default connect(createUser, mapDispatchToProps)(SignUp)

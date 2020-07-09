@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { reset } from "redux-form";
+import { connect } from 'react-redux';
+import "firebase/firestore";
+import firestoreDB from "../../BlogPage/firebase-redux/firestore";
 import { createUser } from "../actions/signin";
-import { Redirect } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -26,38 +28,48 @@ import image from "../../../assets/img/bg7.jpg";
 
 const useStyles = makeStyles(styles);
 
-export default function Signin(props) {
+function SignUp(props) {
     const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
     setTimeout(function () {
         setCardAnimation("");
     }, 700);
-    const classes = useStyles();
+
     const { ...rest } = props;
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [routeRedirect, setRedirect] = useState("");
-    const dispatch = useDispatch();
-    const createUserAction = (email, password) => dispatch(createUser(email, password));
+    const [user, setUser] = useState('');
+    console.log("Here I am " + user);
+    console.log("Here I am " + props);
 
-    const signin = async (event) => {
-        event.preventDefault()
-        if (email !== "" && password !== "") {
-            console.log("creating user");
-            createUserAction(email, password);
-            console.log(email, password);
-            setRedirect(true);
-        } else {
-            console.log("need to fill the credentials")
+    function handleSubmit(e) {
+        // e.preventDefault();
+        console.log(document.querySelector("#email").value);
+        const newUser = {
+            email: document.querySelector("#email").value,
+            password: document.querySelector("#password").value,
+            key: Date.now()
         }
-
+        console.log(newUser);
+        props.createUser(newUser);
+        setUser(newUser);
     }
 
-    const redirectTo = routeRedirect;
-    if (redirectTo) {
-        return <Redirect to="/" />
+    function addUserFire() {
+        const newUser = {
+            email: document.querySelector("#email").value,
+            password: document.querySelector("#password").value,
+            key: Date.now()
+        }
+        console.log(newUser);
+        return firestoreDB.collection("users").add(newUser)
+            .then(function (docRef) {
+                console.log("Document written with ID: ", docRef.id);
+                reset("blogForm");
+            }).catch(function (error) {
+                console.error("Error adding document: ", error);
+            });
     }
 
+    const classes = useStyles();
     return (
         <div>
             <Header
@@ -79,7 +91,10 @@ export default function Signin(props) {
                     <GridContainer justify="center">
                         <GridItem xs={12} sm={12} md={4}>
                             <Card className={classes[cardAnimaton]}>
-                                <form className={classes.form} onSubmit={signin}>
+                                <form className={classes.form} onSubmit={() => {
+                                    handleSubmit();
+                                    addUserFire();
+                                }} >
                                     <CardHeader color="primary" className={classes.cardHeader}>
                                         <h4>Sign Up</h4>
                                     </CardHeader>
@@ -87,14 +102,11 @@ export default function Signin(props) {
                                     <CardBody>
                                         <CustomInput
                                             labelText="Email"
-                                            value={email}
-                                            onChange={(event) => setEmail(event.target.value)}
+                                            id="email"
                                             formControlProps={{
                                                 fullWidth: true
                                             }}
                                             inputProps={{
-                                                type: "email",
-                                                name: "email",
                                                 endAdornment: (
                                                     <InputAdornment position="end">
                                                         <Email className={classes.inputIconsColor} />
@@ -104,14 +116,11 @@ export default function Signin(props) {
                                         />
                                         <CustomInput
                                             labelText="Password"
-                                            value={password}
-                                            onChange={(event) => {setPassword(event.target.value)}}
+                                            id="password"
                                             formControlProps={{
                                                 fullWidth: true
                                             }}
                                             inputProps={{
-                                                type: "password",
-                                                name: "password",
                                                 endAdornment: (
                                                     <InputAdornment position="end">
                                                         <Icon className={classes.inputIconsColor}>
@@ -138,3 +147,9 @@ export default function Signin(props) {
         </div>
     );
 }
+
+const mapDispatchToProps = {
+  createUser
+};
+
+export default connect(createUser, mapDispatchToProps)(SignUp)

@@ -38,10 +38,10 @@ class PostList extends React.Component {
                         <GridItem >
                             <div style={styles.container}>
                               {posts.map(post => (
-                                <div key={post.name} justify="center">       
+                                <div key={post.key} justify="center">       
                                     <h1 style={styles.titles}>{post.title}</h1>
                                     <hr />
-                                    <h2 style={styles.subtitles}> Category: {post.category}</h2>
+                                    <h2 style={styles.subtitles}> Category: {post.category} || By: {post.name}</h2>
                                     <hr />
                                     <p style={styles.description}>{post.details}</p>
                                     <hr />
