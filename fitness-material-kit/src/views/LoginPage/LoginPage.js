@@ -59,7 +59,7 @@ function LoginPage(props) {
     console.log(userCred);
     return firestoreDB.collection("usrs").where("email", "==", userCred.email).where("password", "==", userCred.password)
       .then(alert("You've Been Logged In"))
-      .catch(err => console.log(err), alert("You were not logged in"));
+      .catch(err => console.log(err), alert("You were not logged in, please sign up first"));
   }
 
   return (

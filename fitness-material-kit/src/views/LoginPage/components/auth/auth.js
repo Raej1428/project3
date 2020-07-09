@@ -4,7 +4,6 @@ import {withRouter} from "react-router-dom";
 import firebase from "../../../BlogPage/firebase-redux/firebase";
 
 
-
 const Auth = (Component) => {
           
     class Auth extends React.Component {

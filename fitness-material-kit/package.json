@@ -33,6 +33,8 @@
     "redux-firestore": "^0.13.0",
     "redux-form": "^8.3.6",
     "redux-thunk": "^2.2.0",
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.8",
     "uuid-token-generator": "^1.0.0"
   },
   "devDependencies": {
