@@ -2,8 +2,6 @@
   "name": "material-kit-react",
   "version": "1.9.0",
   "description": "Material Kit React. Coded by Creative Tim",
-  "private": true,
-  "proxy": "http://localhost:3000/",
   "main": "src/index.js",
   "dependencies": {
     "@firebase/app-types": "0.x",
@@ -15,6 +13,7 @@
     "firebase-admin": "^5.12.0",
     "firebase-tools": "^3.18.4",
     "history": "4.10.1",
+    "jwt-decode": "^2.2.0",
     "lodash": "^4.17.15",
     "moment": "2.26.0",
     "node-sass": "4.14.1",
@@ -32,6 +31,7 @@
     "react-swipeable-views": "0.13.9",
     "redux": "^4.0.5",
     "redux-firestore": "^0.13.0",
+    "redux-form": "^8.3.6",
     "redux-thunk": "^2.2.0",
     "uuid-token-generator": "^1.0.0"
   },

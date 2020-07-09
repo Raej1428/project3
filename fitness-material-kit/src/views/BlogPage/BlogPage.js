@@ -15,7 +15,6 @@ import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 // Sections for this page
 import BlogSection from "./Sections/BlogSection.js";
 import PostList from "./Sections/PostList.js";
-import { addPost } from "./Sections/actions.js";
 // import BlogComments from "../BlogComments/BlogComments.js";
 
 const dashboardRoutes = [];
@@ -31,7 +30,7 @@ export default function BlogPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="Material Kit React"
+        brand="DU Fitness"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{

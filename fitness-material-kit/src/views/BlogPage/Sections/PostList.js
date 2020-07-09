@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import "../reducers/reducer"
 // importing material components
 import CommentGroup from "./CommentGroup";
 import GridContainer from "../../../components/Grid/GridContainer.js";
 import GridItem from "../../../components/Grid/GridItem.js";
 import styles from "../../../assets/jss/material-kit-react/views/landingPage.js";
 // @material-ui/core components
-import reducer from "../reducers/reducer";
 import "firebase/firestore";
 import firestoreDB from "../firebase-redux/firestore";
 // import Parallax from "../../../components/Parallax/Parallax.js";
@@ -55,9 +55,9 @@ class PostList extends React.Component {
 } 
 
 function mapStateToProps(state) {
-    console.log(state.reducer);
+    console.log(state);
     return {
-        posts: state.reducer
+        posts: state
     }
 }
 

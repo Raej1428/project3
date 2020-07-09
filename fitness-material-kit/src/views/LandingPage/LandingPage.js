@@ -16,7 +16,6 @@ import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
 import WorkoutSection from "./Sections/WorkoutSection.js";
-import RegisterPage from "../RegisterPage/RegisterPage.js";
 // import LoginPage from "../LoginPage/LoginPage";
 
 const dashboardRoutes = [];
@@ -46,19 +45,17 @@ export default function LandingPage(props) {
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>Your Fitness Journey Starts Here.</h1>
               <h4>
-                Every step you take towards a new healthier you will be reinforced here. 
+                Every step you take towards a new healthier you will be reinforced here.
                 We offer intense workout programs, healthy recipes, and peer collaboration to help you get where you want to be on your health journey.
-                Come explore the healthier side of living with DU Fitness. Do you, be healthy, start your journey here. 
+                Come explore the healthier side of living with DU Fitness. Do you, be healthy, start your journey here.
               </h4>
               <br />
-              <Button
-                color="danger"
-                size="lg"
-                href={RegisterPage}>
-                <Link to="/register-page" className={classes.dropdownLink}>
-                Register Today!
-                </Link>
-              </Button>
+
+              <Link to={"/login-page"} className={classes.link}>
+                <Button color="primary" size="lg">
+                  Login and Sign Up
+                  </Button>
+              </Link>
             </GridItem>
           </GridContainer>
         </div>

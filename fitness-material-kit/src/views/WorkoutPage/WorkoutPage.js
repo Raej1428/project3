@@ -29,7 +29,7 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="Material Kit React"
+        brand="DU Fitness"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -41,10 +41,10 @@ export default function LandingPage(props) {
       <Parallax filter image={require("assets/img/Running-in-the-Rain.jpg")}>
         <div className={classes.container}>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={6}>
+            <GridItem xs={12} sm={12} md={12}>
               <h1 className={classes.title}>Baby we can work-it-out.</h1>
               <h4>
-               Find all of the latest workouts here, updated at your convenience. 
+              Check back get updated workouts anytime. Listen to your favorite workout playlist on Spotify.
               </h4>
               <br />
             </GridItem>

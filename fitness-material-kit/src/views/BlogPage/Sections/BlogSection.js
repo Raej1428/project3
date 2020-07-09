@@ -1,4 +1,5 @@
 import React from "react";
+import { reset } from "redux-form"
 import { useState } from 'react';
 import { connect } from 'react-redux'
 import { addPost } from './actions.js';
@@ -45,6 +46,7 @@ function BlogSection(props) {
     return firestoreDB.collection("blog-page").add(newPost)
     .then(function(docRef) {
     console.log("Document written with ID: ", docRef.id);
+      reset("blogForm");
     }).catch(function(error) {
     console.error("Error adding document: ", error);});
  }
@@ -59,7 +61,7 @@ function BlogSection(props) {
             How's it going? Let us know.
             Find a new favorite recipe, workout, or reach one of your fitness goals? go ahead blog about it!
           </h5>
-          <form>
+          <form className="blogForm">
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput

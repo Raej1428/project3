@@ -24,24 +24,20 @@ const useStyles = makeStyles(styles);
 
 export default function WorkoutOne(props) {
     const classes = useStyles();
-    const { ...rest } = props;
-    const imageClasses = classNames(
-        classes.imgRaised,
-        classes.imgRoundedCircle,
-        classes.imgFluid
-    );
+    // const { ...rest } = props;
+
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
     return (
         <div>
             <Parallax filter image={require("assets/img/profile-bg.jpg")} />
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div>
-                    <div className={classes.container}>
-                        <div className={classes.description}>
-                            <h1 className={classes.title}>Signature Workouts</h1>
+                    <div className={classes.container} >
+                        <div className={classes.section} justify="center">
+                            <h1 className={classes.title} >Signature Workouts</h1>
                         </div>
                         <GridContainer justify="center">
-                            <GridItem xs={12} sm={12} md={3} lg={10} className={classes.navWrapper}>
+                            <GridItem xs={12} sm={12} md={10} lg={10} className={classes.navWrapper}>
                                 <NavPills
                                     alignCenter
                                     color="primary"
