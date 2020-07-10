@@ -3,6 +3,11 @@
   "version": "1.9.0",
   "description": "Material Kit React. Coded by Creative Tim",
   "main": "src/index.js",
+  "private": true,
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.14.5"
+  },
   "dependencies": {
     "@firebase/app-types": "0.x",
     "@material-ui/core": "4.10.0",
@@ -13,7 +18,6 @@
     "firebase-admin": "^5.12.0",
     "firebase-tools": "^3.18.4",
     "history": "4.10.1",
-    "jwt-decode": "^2.2.0",
     "lodash": "^4.17.15",
     "moment": "2.26.0",
     "node-sass": "4.14.1",
