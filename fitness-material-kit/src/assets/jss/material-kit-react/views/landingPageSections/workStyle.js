@@ -15,6 +15,9 @@ const workStyle = {
     textDecoration: "none",
     textAlign: "center"
   },
+  subtitle:{
+    ...title
+  },
   description: {
     color: "#999",
     textAlign: "center"

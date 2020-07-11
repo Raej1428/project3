@@ -14,45 +14,46 @@ import firestoreDB from "../firebase-redux/firestore";
 
 class PostList extends React.Component {
     constructor(props) {
-    super(props);
-    this.state = {
-      posts: []
-    };
-    
+        super(props);
+        this.state = {
+            posts: []
+        };
+
     }
 
-  componentDidMount() {
-    firestoreDB.collection("blog-page").get().then(querySnapshot => {
-        const data = querySnapshot.docs.map(doc => doc.data());
-        console.log(data);
-        this.setState({ posts: data});
-    });
-      
-  }
-  
-  render() { 
-    const { posts } = this.state;
-    console.log(styles.container);
-    return (<div style={styles.container}>
-                    <GridContainer justify="center">
-                        <GridItem >
-                            <div style={styles.container}>
-                              {posts.map(post => (
-                                <div key={post.key} justify="center">       
-                                    <h1 style={styles.titles}>{post.title}</h1>
-                                    <hr />
-                                    <h2 style={styles.subtitles}> Category: {post.category} || By: {post.name}</h2>
-                                    <hr />
-                                    <p style={styles.description}>{post.details}</p>
-                                    <hr />
-                                </div>))}
-                             </div>
-                        </GridItem>
-                    </GridContainer>
-                    <CommentGroup />
-            </div>)
+    componentDidMount() {
+        firestoreDB.collection("blog-page").get().then(querySnapshot => {
+            const data = querySnapshot.docs.map(doc => doc.data());
+            console.log(data);
+            this.setState({ posts: data });
+        });
+
     }
-} 
+
+    render() {
+        const { posts } = this.state;
+        console.log(styles.container);
+        return (<div style={styles.container}>
+            <GridContainer justify="center">
+                <GridItem >
+                    <div style={styles.container}>
+                        {posts.map(post => (
+                            <div key={post.key} justify="center">
+                                <h1 style={styles.titles}>{post.title}</h1>
+                                <hr />
+                                <h2 style={styles.subtitles}> Category: {post.category} || By: {post.name}</h2>
+                                <hr />
+                                <p style={styles.description}>{post.details}</p>
+                                <hr />
+                                <CommentGroup />
+                            </div>
+                        ))}
+                    </div>
+                </GridItem>
+            </GridContainer>
+        </div>)
+    }
+}
 
 function mapStateToProps(state) {
     console.log(state);
@@ -69,7 +70,7 @@ function PostList(props) {
     const arr = [];
     arr.push(props.posts);
     console.log(arr);
-    const listItems = arr.map((items, index) => 
+    const listItems = arr.map((items, index) =>
         <div key={index} justify="center">
             <h1 className={classes.titles} key={index}>{items.title}</h1>
             <hr />
