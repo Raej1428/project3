@@ -17,7 +17,7 @@ const spfetch = (global.spfetch = async (input, init) => {
     }
   );
 
-  const { ok, status, statusText } = response;
+  const { ok, status } = response;
 
   let json = {};
   try {
@@ -55,7 +55,7 @@ async function fetchTokenFromPopup() {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(
       reject,
-      20000,
+      200000,
       new Error('Timeout getting token')
     );
     window.addEventListener(

@@ -13,33 +13,31 @@ import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
 import NavPills from "../../components/NavPills/NavPills.js";
 import Parallax from "../../components/Parallax/Parallax.js";
-import studio4 from "../../assets/img/examples/studio-4.jpg";
-import work5 from "../../assets/img/examples/clem-onojegaw.jpg";
+import studio4 from "../../assets/img/badred.png";
+import pushups from "../../assets/img/push-ups.jpg";
 import styles from "../../assets/jss/material-kit-react/views/profilePage.js";
+import work5 from "../../assets/img/boatpose.png"
+import work6 from "../../assets/img/mtnclimb.gif"
 import { List, ListItem } from "@material-ui/core";
 
 const useStyles = makeStyles(styles);
 
 export default function WorkoutOne(props) {
     const classes = useStyles();
-    const { ...rest } = props;
-    const imageClasses = classNames(
-        classes.imgRaised,
-        classes.imgRoundedCircle,
-        classes.imgFluid
-    );
+    // const { ...rest } = props;
+
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
     return (
         <div>
             <Parallax filter image={require("assets/img/profile-bg.jpg")} />
             <div className={classNames(classes.main, classes.mainRaised)}>
                 <div>
-                    <div className={classes.container}>
-                        <div className={classes.description}>
-                            <h1 className={classes.title}>Signature Workouts</h1>
+                    <div className={classes.container} >
+                        <div className={classes.section} justify="center">
+                            <h1 className={classes.title} >Signature Workouts</h1>
                         </div>
                         <GridContainer justify="center">
-                            <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
+                            <GridItem xs={12} sm={12} md={10} lg={10} className={classes.navWrapper}>
                                 <NavPills
                                     alignCenter
                                     color="primary"
@@ -49,15 +47,15 @@ export default function WorkoutOne(props) {
                                             tabIcon: AccessibilityNewIcon,
                                             tabContent: (
                                                 <GridContainer justify="center">
-                                                    <GridItem xs={12} sm={12} md={4}>
+                                                    <GridItem xs={12} sm={12} md={10} lg={10}>
                                                         <h1 className={classes.title}>Arms</h1>
                                                         <p className={classes.description}>This workout is designed to use your own body weight.
                                                             For the bicep curls and tricep kickbacks, you can use a small weight or a gallon jug.</p>
-                                                        <h2 className={classes.title}>Medium {"&"} Intermediate Variations: </h2>
-                                                        <h3 className={classes.title}>Medium: Multiple the number of reps or interval time, by two.</h3>
-                                                        <h3 className={classes.title}>Hard: Multiple the number of reps or interval time, by three.</h3>
-                                                        <h4 className={classes.title}>Challenge: Repeat each exercise for eight 3 minute rounds.</h4>
-                                                        <h4 className={classes.title}>Extreme Challenge: Repeat each exercise for eight 5 minute rounds.</h4>
+                                                        <h4 className={classes.cardTitle}>Variations: </h4>
+                                                        <h5 className={classes.cardTitle}>Medium: Multiple the number of reps or interval time, by two.</h5>
+                                                        <h5 className={classes.cardTitle}>Hard: Multiple the number of reps or interval time, by three.</h5>
+                                                        <h5 className={classes.cardTitle}>Challenge: Repeat each exercise for eight 3 minute rounds.</h5>
+                                                        <h5 className={classes.cardTitle}>Extreme-Challenge: Repeat each exercise for eight 5 minute rounds.</h5>
                                                         <List>
                                                             <ListItem className={classes.description}>15 Walkout Plank Pushups (Plank position, walk your hands in and out)</ListItem>
                                                             <ListItem className={classes.description}>15 Pushups</ListItem>
@@ -70,7 +68,7 @@ export default function WorkoutOne(props) {
                                                         </List>
                                                         <img
                                                             alt="..."
-                                                            src={studio4}
+                                                            src={pushups}
                                                             className={navImageClasses}
                                                         />
                                                     </GridItem>
@@ -82,14 +80,14 @@ export default function WorkoutOne(props) {
                                             tabIcon: FitnessCenterIcon,
                                             tabContent: (
                                                 <GridContainer justify="center">
-                                                    <GridItem xs={12} sm={12} md={4}>
+                                                    <GridItem xs={12} sm={12} md={10} lg={10}>
                                                         <h1 className={classes.title}>Legs</h1>
                                                         <p className={classes.description}>This workout is designed to use your own body weight.</p>
-                                                        <h2 className={classes.title}>Medium {"&"} Intermediate Variations: </h2>
-                                                        <h3 className={classes.title}>Medium: Multiple the number of reps or interval time, by two.</h3>
-                                                        <h3 className={classes.title}>Hard: Multiple the number of reps or interval time, by three.</h3>
-                                                        <h4 className={classes.title}>Challenge: Repeat each exercise for eight 3 minute rounds.</h4>
-                                                        <h4 className={classes.title}>Extreme Challenge: Repeat each exercise for eight 5 minute rounds.</h4>
+                                                        <h4 className={classes.cardTitle}>Variations: </h4>
+                                                        <h5 className={classes.cardSubtitle}>Medium: Multiple the number of reps or interval time, by two.</h5>
+                                                        <h5 className={classes.cardTitle}>Hard: Multiple the number of reps or interval time, by three.</h5>
+                                                        <h5 className={classes.cardTitle}>Challenge: Repeat each exercise for eight 3 minute rounds.</h5>
+                                                        <h5 className={classes.cardTitle}>Extreme-Challenge: Repeat each exercise for eight 5 minute rounds.</h5>
                                                         <List>
                                                             <ListItem className={classes.description}>50 Squats</ListItem>
                                                             <ListItem className={classes.description}>50 Mountain Climbers (Count each leg)</ListItem>
@@ -102,7 +100,7 @@ export default function WorkoutOne(props) {
                                                         </List>
                                                         <img
                                                             alt="..."
-                                                            src={work5}
+                                                            src={studio4}
                                                             className={navImageClasses}
                                                         />
                                                     </GridItem>
@@ -114,14 +112,14 @@ export default function WorkoutOne(props) {
                                             tabIcon: DirectionsWalkIcon,
                                             tabContent: (
                                                 <GridContainer justify="center">
-                                                    <GridItem xs={12} sm={12} md={4}>
+                                                    <GridItem xs={12} sm={12} md={10} lg={10}>
                                                         <h1 className={classes.title}>Back</h1>
                                                         <p className={classes.description}>This workout is designed to use your own body weight.</p>
-                                                        <h2 className={classes.title}>Medium {"&"} Intermediate Variations: </h2>
-                                                        <h3 className={classes.title}>Medium: Multiple the number of reps or interval time, by two.</h3>
-                                                        <h3 className={classes.title}>Hard: Multiple the number of reps or interval time, by three.</h3>
-                                                        <h4 className={classes.title}>Challenge: Repeat each exercise for eight 3 minute rounds.</h4>
-                                                        <h4 className={classes.title}>Extreme Challenge: Repeat each exercise for eight 5 minute rounds.</h4>
+                                                        <h4 className={classes.cardTitle}>Variations: </h4>
+                                                        <h5 className={classes.cardTitle}>Medium: Multiple the number of reps or interval time, by two.</h5>
+                                                        <h5 className={classes.cardTitle}>Hard: Multiple the number of reps or interval time, by three.</h5>
+                                                        <h5 className={classes.cardTitle}>Challenge: Repeat each exercise for eight 3 minute rounds.</h5>
+                                                        <h5 className={classes.cardTitle}>Extreme-Challenge: Repeat each exercise for eight 5 minute rounds.</h5>
                                                         <List>
                                                             <ListItem className={classes.description}>30 Superman Pulses</ListItem>
                                                             <ListItem className={classes.description}>30 Pushup Plank Arm Raises</ListItem>
@@ -134,7 +132,7 @@ export default function WorkoutOne(props) {
                                                         </List> 
                                                         <img
                                                             alt="..."
-                                                            src={work5}
+                                                            src={work6}
                                                             className={navImageClasses}
                                                         />
                                                     </GridItem>
@@ -146,14 +144,14 @@ export default function WorkoutOne(props) {
                                             tabIcon: RowingIcon,
                                             tabContent: (
                                                 <GridContainer justify="center">
-                                                    <GridItem xs={12} sm={12} md={4}>
+                                                    <GridItem xs={12} sm={12} md={10} lg={10}>
                                                         <h1 className={classes.title}>Abdomen</h1>
-                                                        <p className={classes.description}>This workout is designed to use your own body weight targetting your Abs.</p>
-                                                        <h2 className={classes.title}>Medium {"&"} Intermediate Variations: </h2>
-                                                        <h3 className={classes.title}>Medium: Multiple the number of reps or interval time, by two.</h3>
-                                                        <h3 className={classes.title}>Hard: Multiple the number of reps or interval time, by three.</h3>
-                                                        <h4 className={classes.title}>Challenge: Repeat each exercise for eight 3 minute rounds.</h4>
-                                                        <h4 className={classes.title}>Extreme Challenge: Repeat each exercise for eight 5 minute rounds.</h4>
+                                                        <p className={classes.cardTitle}>This workout is designed to use your own body weight targetting your Abs.</p>
+                                                        <h4 className={classes.cardTitle}>Variations: </h4>
+                                                        <h5 className={classes.cardTitle}>Medium: Multiple the number of reps or interval time, by two.</h5>
+                                                        <h5 className={classes.cardTitle}>Hard: Multiple the number of reps or interval time, by three.</h5>
+                                                        <h5 className={classes.cardTitle}>Challenge: Repeat each exercise for eight 3 minute rounds.</h5>
+                                                        <h5 className={classes.cardTitle}>Extreme-Challenge: Repeat each exercise for eight 5 minute rounds.</h5>
                                                         <List>
                                                             <ListItem className={classes.description}>60 Second Plank</ListItem>
                                                             <ListItem className={classes.description}>60 second Boat Pose</ListItem>

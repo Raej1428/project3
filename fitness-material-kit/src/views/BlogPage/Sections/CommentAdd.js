@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import CommentGroup from "./CommentGroup";
 import Button from "../../../components/CustomButtons/Button";
 
 function CommentAdd(props) {
     // const { handleCommentSubmit } = props;
-    function handleCommentSubmit(data) {
+    function handleCommentSubmit(e) {
         const postData = {
-            comment: data
+            comment: document.querySelector("comment").value
         };
-        console.log(comment)
+        console.log(postData);
+        setComment(postData);
     }
 
     const [comment, setComment] = useState("");
@@ -17,7 +17,7 @@ function CommentAdd(props) {
             <div className="card mt-4 mb-3">
                 <div className="card-header"><strong>Comments</strong></div>
                 <div className="card-body">
-                    <textarea name="comment" className="form-control" placeholder="Add a new Comment" onChange={event => setComment(event.target.value)} value={comment}></textarea>
+                    <textarea id="comment" className="form-control" placeholder="Add a new Comment" onChange={event => setComment(event.target.value)} value={comment}></textarea>
                 </div>
             </div>
             <div>

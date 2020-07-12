@@ -3,9 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
 // @material-ui/icons
-
 // core components
 import WorkoutOne from "./WorkoutOne";
 import Header from "../../components/Header/Header.js";
@@ -15,9 +13,7 @@ import GridItem from "../../components/Grid/GridItem.js";
 // import Button from "../../components/CustomButtons/Button.js";
 import HeaderLinks from "../../components/Header/HeaderLinks.js";
 import Parallax from "../../components/Parallax/Parallax.js";
-
 import styles from "../../assets/jss/material-kit-react/views/landingPage.js";
-
 // Sections for this page
 import WorkoutSection from "./Sections/WorkoutSection.js";
 
@@ -33,7 +29,7 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="Material Kit React"
+        brand="DU Fitness"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -42,13 +38,13 @@ export default function LandingPage(props) {
         }}
         {...rest}
       />
-      <Parallax filter image={require("assets/img/landing-bg.jpg")}>
+      <Parallax filter image={require("assets/img/Running-in-the-Rain.jpg")}>
         <div className={classes.container}>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={6}>
+            <GridItem xs={12} sm={12} md={12}>
               <h1 className={classes.title}>Baby we can work-it-out.</h1>
               <h4>
-               Find all of the latest workouts here, updated at your convenience. 
+              Check back get updated workouts anytime. Listen to your favorite workout playlist on Spotify.
               </h4>
               <br />
             </GridItem>

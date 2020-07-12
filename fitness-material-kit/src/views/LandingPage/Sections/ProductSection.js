@@ -51,7 +51,7 @@ export default function ProductSection() {
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Fingerprint"
+              title="Recipes"
               description="Checkout user submitted recipes to get the latest nutrition hacks from other users."
               icon={EmojiFoodBeverage}
               iconColor="info"
