@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import Button from "../../../components/CustomButtons/Button";
 
 function CommentAdd(props) {
-    // const { handleCommentSubmit } = props;
+    console.log(props)
     function handleCommentSubmit(e) {
         const postData = {
-            comment: document.querySelector("comment").value
+            comment: document.querySelector("comment"),
         };
-        console.log(postData);
-        setComment(postData);
+        console.log(props.id, comment);
+        setComment("");
     }
 
     const [comment, setComment] = useState("");
@@ -21,7 +21,7 @@ function CommentAdd(props) {
                 </div>
             </div>
             <div>
-                <Button onClick={handleCommentSubmit} color="primary">Post</Button>
+                <Button onClick={handleCommentSubmit} color="primary">Comment</Button>
             </div>
         </div>
     )
