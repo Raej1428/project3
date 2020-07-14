@@ -18,8 +18,8 @@ const useStyles = makeStyles(styles);
 
 function BlogSection(props) {
   const [posts, setPost] = useState('');
-  console.log("Here I am " + posts);
-  console.log("Here I am " + props);
+  // console.log("Here I am " + posts);
+  // console.log("Here I am " + props);
 
   function handleSubmit(e) {
     // e.preventDefault();
@@ -29,6 +29,11 @@ function BlogSection(props) {
       title: document.querySelector("#title").value,
       category: document.querySelector("#category").value,
       details: document.querySelector("#details").value,
+      comment: [{
+        comment: document.querySelector("comment").value,
+        id: posts.key
+      }
+      ],
       key: Date.now()
     }
     console.log(newPost);
@@ -36,22 +41,27 @@ function BlogSection(props) {
     setPost(newPost);
   }
 
- function addPostFire(){
+  function addPostFire() {
     const newPost = {
       name: document.querySelector("#name").value,
       title: document.querySelector("#title").value,
       category: document.querySelector("#category").value,
       details: document.querySelector("#details").value,
+      comment: [{
+        comment: document.querySelector("comment").value,
+        id: posts.key
+      }],
       key: Date.now()
     }
     console.log(newPost);
     return firestoreDB.collection("blog-page").add(newPost)
-    .then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-      reset("blogForm");
-    }).catch(function(error) {
-    console.error("Error adding document: ", error);});
- }
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        reset("blogForm");
+      }).catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+  }
 
   const classes = useStyles();
   return (
@@ -64,10 +74,10 @@ function BlogSection(props) {
             Find a new favorite recipe, workout, or reach one of your fitness goals? go ahead blog about it!
           </h5>
           <form onSubmit={() => {
-                  handleSubmit();
-                  addPostFire();
-                }}  
-                className="blogForm">
+            handleSubmit();
+            addPostFire();
+          }}
+            className="blogForm">
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <CustomInput
@@ -109,7 +119,7 @@ function BlogSection(props) {
                 }}
               />
               <GridItem xs={12} sm={12} md={4}>
-                <Button  type="submit"  color="primary">Post</Button>
+                <Button type="submit" color="primary">Post</Button>
               </GridItem>
             </GridContainer>
           </form>
