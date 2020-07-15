@@ -1,11 +1,9 @@
 import React from "react";
-import axios from "axios";
-import cheerio from "cheerio";
-// import React, { useState } from 'react';
-// import { connect } from 'react-redux'
-// import { addres } from '../actions.js.js'
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+// import axios from "axios";
+// import cheerio from "cheerio";
+// import "firebase/firestore";
+// import firestoreDB from "../../BlogPage/firebase-redux/firestore"
+// // @material-ui/core components
 
 // core components
 import GridContainer from "../../../components/Grid/GridContainer.js";
@@ -14,86 +12,76 @@ import GridItem from "../../../components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/workStyle.js";
 import { Link } from "react-router-dom";
-import cors from "cors";
+// import cors from "cors";
 // import { title } from "../../../assets/jss/material-kit-react.js";
 
-const useStyles = makeStyles(styles);
-export default function RecipeSection() {
-  const classes = useStyles();
-  const results = [];
-  function scrape() {
-    console.log("\n-=#=--=#=--=#=--=#=--=#=--=#=-\n" +
-      "Grabbing Healthy Recipies\n" +
-      "from allrecipies.com:" +
-      "\n-=#=--=#=--=#=--=#=--=#=--=#=-\n");
 
-    const corsOptions = {
-      optionsSuccessStatus: 200,
-      crossOrigin: true
-    }
-    console.log(corsOptions)
-
-    axios.get("https://www.allrecipes.com/recipes/84/healthy-recipes/", cors(corsOptions)).then(function (response) {
-      console.log(response);
-      const $ = cheerio.load(response.data);
-      console.log(response.data);
-
-      $(".fixed-recipe-card").each(function (i, element) {
-
-        const title = $(element)
-          .find("a")
-          .first()
-          .attr(".data-name")
-          .text()
-          .trim();
-
-        const sum = $(element)
-          .find(".fixed-recipe-card__info").find(".fixed-recipe-card__description ng-isolate-scope")
-          .text()
-          .trim();
-
-        const link = $(element).find("a")
-          .attr("href");
-
-        results.push({
-          title: title,
-          summary: sum,
-          link: link
-        });
-      });
-
-      console.log(results);
-    });
+export default class RecipeSection extends React.Component {
+  state = {
+    activeRecipe: []
   }
-  return (
-    <div className={classes.section}>
-      <GridContainer>
-        <GridItem>
-          <div className={classes.brand}>
-            <h1 className={classes.title}>Healthy Recipes.</h1>
-            <h3 className={classes.subtitles}>
-              Check back get updated recipes anytime.
+  componentDidMount = async () => {
+    // const title = this.props.location.state.recipe;
+    const req = await fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=10&tags=keto", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+            "x-rapidapi-key": "286743b9e8mshca96ef72bc84158p10a340jsn84bc27c45ef1"
+        }
+    });
+    
+    const res = await req.json();
+    this.setState({ activeRecipe: res.recipes });
+    console.log(this.state.activeRecipe);
+  }
+  render() {
+    const recipe = this.state.activeRecipe;
+    return (
+      <div className={styles.section}>
+        <GridContainer>
+          <GridItem>
+            <div className={styles.brand}>
+              <h1 className={styles.title}>Healthy Recipes.</h1>
+              <h3 className={styles.subtitles}>
+                Check back get updated recipes anytime.
                 </h3>
-          </div>
-          <Button onClick={scrape} type="submit" color="primary">Load New Recipes</Button>
-        </GridItem>
-      </GridContainer>
-      <GridContainer justify="center">
-        <GridItem >
-          <div style={styles.container}>
-            {results.map(res => (
-              <div key={res.key} justify="center">
-                <h1 style={styles.titles}>{res.title}</h1>
-                <hr />
-                <Link style={styles.subtitles}>{res.link}</Link>
-                <hr />
-                <p style={styles.description}>{res.sum}</p>
-                <hr />
-              </div>))}
-          </div>
-        </GridItem>
-      </GridContainer>
-    </div>
-  );
+            </div>
+            <Button onClick={this.componentDidMount} type="submit" color="primary">Load New Recipes</Button>
+          </GridItem>
+        </GridContainer>
+        <GridContainer justify="center">
+          <GridItem >
+          { this.state.activeRecipe.length !== 0 &&
+            <div style={styles.container}>
+              {recipe.map(recipe => (
+                <div key={recipe.id} justify="center">
+                  <h1 style={styles.titles}>{recipe.title}</h1>
+                  <hr />
+                  <Link style={styles.subtitles}>{recipe.link}</Link>
+                  <hr />
+                  <p style={styles.description}>{recipe.summary}</p>
+                  <hr />
+                </div>))}
+            </div>
+             }
+          </GridItem>
+        </GridContainer>
+      </div>
+    );
+  }
 }
 
+
+
+
+    // axios.get("https://cors-anywhere.herokuapp.com/https://api.edamam.com/search").then(response => {
+    //   console.log(response);
+    //   const recipes = response.data;
+    //   this.setState({ recipes })
+
+    //     recipes.push({
+    //       recipes
+    //     });
+
+    //   console.log(recipes);
+    // })

@@ -4,6 +4,7 @@
   "description": "Material Kit React. Coded by Creative Tim",
   "main": "src/index.js",
   "private": true,
+  "proxy": "http://localhost:3000",
   "engines": {
     "node": "12.16.1",
     "npm": "6.14.5"

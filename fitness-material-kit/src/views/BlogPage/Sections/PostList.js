@@ -45,6 +45,7 @@ class PostList extends React.Component {
                                 <hr />
                                 <p style={styles.description}>{post.details}</p>
                                 <hr />
+                                <p style={styles.description}>{}</p>
                                 <CommentGroup />
                             </div>
                         ))}

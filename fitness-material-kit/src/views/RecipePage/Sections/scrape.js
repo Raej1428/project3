@@ -1,42 +1,49 @@
-import axios from "axios";
-import cheerio from "cheerio";
+import React from 'react';
 
-export default function scrape() {
-    console.log("\n-=#=--=#=--=#=--=#=--=#=--=#=-\n" +
-        "Grabbing Healthy Recipies\n" +
-        "from allrecipies.com:" +
-        "\n-=#=--=#=--=#=--=#=--=#=--=#=-\n");
+import { Link } from "react-router-dom";
 
-    axios.get("https://www.allrecipes.com/recipes/84/healthy-recipes/").then(function (response) {
+const API_KEY = "Your-api-key";
 
-        let $ = cheerio.load(response.data);
-
-        const results = [];
-
-        $(".fixed-recipe-card").each(function (i, element) {
-            this = element;
-            const title = $(this)
-                .find(".fixed-recipe-card__title-link")
-                .first()
-                .text()
-                .trim();
-
-            const sum = $(this)
-                .find(".fixed-recipe-card__description")
-                .text()
-                .trim();
-
-            const link = $(this).find("a")
-
-                .attr("href");
-
-            results.push({
-                title: title,
-                summary: sum,
-                link: link
-            });
-        });
-
-        console.log(results);
+class Recipe extends React.Component {
+  state = {
+    activeRecipe: []
+  }
+  componentDidMount = async () => {
+    const title = this.props.location.state.recipe;
+    const req = await fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=10&tags=vegetarian%252Cdessert", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+            "x-rapidapi-key": "286743b9e8mshca96ef72bc84158p10a340jsn84bc27c45ef1"
+        }
     });
-}
+    
+    const res = await req.json();
+    this.setState({ activeRecipe: res.recipes[0] });
+    console.log(this.state.activeRecipe);
+  }
+  render() {
+    const recipe = this.state.activeRecipe;
+    return (
+      <div className="container">
+        { this.state.activeRecipe.length !== 0 &&
+          <div className="active-recipe">
+            <img className="active-recipe__img" src={recipe.image_url} alt={recipe.title}/>
+            <h3 className="active-recipe__title">{ recipe.title }</h3>
+            <h4 className="active-recipe__publisher">
+              Publisher: <span>{ recipe.publisher }</span>
+            </h4>
+            <p className="active-recipe__website">Website: 
+              <span><a href={recipe.publisher_url}>{recipe.publisher_url}</a></span>
+            </p>
+            <button className="active-recipe__button">
+              <Link to="/">Go Home</Link>
+            </button>
+          </div>
+        }
+      </div>
+    );
+  }
+};
+
+export default Recipe;

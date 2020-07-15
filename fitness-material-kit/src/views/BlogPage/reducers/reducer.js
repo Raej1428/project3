@@ -3,7 +3,8 @@ import { firebaseReducer } from "react-redux-firebase";
 import createUser from "../../LoginPage/reducers/signin";
 import loginUser from "../../LoginPage/reducers/login";
 import logoutUser from "../../LoginPage/reducers/logout";
-import createPost from "./create"
+import createPost from "./create";
+import createComment from "./comment"
 
 
 // Combine each fetch reducer and the user reducer:
@@ -13,6 +14,7 @@ const allReducers = {
 	logIn: loginUser,
 	logOut: logoutUser,
 	createPost: createPost,
+	createComment: createComment
 };
 
 // Export the root reducer

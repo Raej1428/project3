@@ -43,6 +43,7 @@ ReactDOM.render(
           <Route path="/blog-page" component={BlogPage} />
           <Route path="/workout-page" component={WorkoutPage} />
           <Route path="/recipe-page" component={RecipePage} />
+          <Route path="/recipe-page/:id" component={RecipePage} />
           <Route path="/landing-page" component={LandingPage} />
           <Route path="/login-page" component={LoginPage} />
           <Route exactpath="/signin" component={Signin} />
