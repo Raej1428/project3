@@ -7,24 +7,13 @@ import { connect } from 'react-redux'
 import { addComment } from './commentActions.js';
 
 function CommentAdd(props) {
-    // const { handleCommentSubmit } = props;
-   
+    console.log(props)
     function handleCommentSubmit(e) {
-        const commentData = {
-            comment: document.querySelector("#comment").value,
-            date: Date.now()
+        const postData = {
+            comment: document.querySelector("comment"),
         };
-        console.log(commentData);
-        props.addComment(commentData)
-        setComment(commentData);
-
-        // return firestoreDB.collection("blog-page").where("").update(commentData)
-        //     .then(function (docRef) {
-        //         console.log("Document written with ID: ", docRef.id);
-        //         reset("blogForm");
-        //     }).catch(function (error) {
-        //         console.error("Error adding document: ", error);
-        //     });
+        console.log(props.id, comment);
+        setComment("");
     }
 
     const [comment, setComment] = useState("");
@@ -38,7 +27,7 @@ function CommentAdd(props) {
                 </div>
             </div>
             <div>
-                <Button onClick={handleCommentSubmit} color="primary">Post</Button>
+                <Button onClick={handleCommentSubmit} color="primary">Comment</Button>
             </div>
         </div>
     )

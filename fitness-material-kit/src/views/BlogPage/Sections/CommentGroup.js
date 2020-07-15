@@ -6,7 +6,7 @@ class CommentGroup extends Component {
     render() {
         return (
             <div>
-                <CommentAdd />
+                <CommentAdd id={this.props.id} />
             </div>
         )
     }

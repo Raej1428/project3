@@ -27,7 +27,6 @@ class PostList extends React.Component {
             console.log(data);
             this.setState({ posts: data });
         });
-
     }
 
     render() {
@@ -45,8 +44,7 @@ class PostList extends React.Component {
                                 <hr />
                                 <p style={styles.description}>{post.details}</p>
                                 <hr />
-                                <p style={styles.description}>{}</p>
-                                <CommentGroup />
+                                <CommentGroup id={post.key} />
                             </div>
                         ))}
                     </div>
